@@ -11,6 +11,7 @@ Version: 1.0.1
 include( plugin_dir_path( __FILE__ ) . 'customizer.php');
 include( plugin_dir_path( __FILE__ ) . 'option-panel.php');
 define("LOGINCUST_VERSION","1.0.1");
-define("LOGINCUST_TEXTDOMAIN","login-customizer");
-
+if ( !defined( 'LOGINCUST_TEXTDOMAIN' ) ) {
+	define("LOGINCUST_TEXTDOMAIN","login-customizer");
+}
 ?>
