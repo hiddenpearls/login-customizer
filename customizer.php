@@ -50,6 +50,12 @@ function logincust_customize_register($wp_customize)
         'title' => __('Other', 'login-customizer'),
         'panel'  => 'logincust_panel',
     ));
+	
+	$wp_customize->add_section('logincust_addon_section', array(
+		'priority' => 40,
+		'title' => __('Security', LOGINCUST_TEXTDOMAIN),
+		'panel'  => 'logincust_panel',
+	));
  
     $wp_customize->add_setting('logincust_logo', array(
         'type' => 'option',
@@ -396,6 +402,89 @@ function logincust_customize_register($wp_customize)
         'priority' => 15,
         'settings' => 'logincust_other_css'
     ));
+
+	$wp_customize->add_setting('logincust_security_captcha', array(
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+	));
+
+	$wp_customize->add_control('logincust_security_captcha', array(
+		'label' => __('Enable security captcha', LOGINCUST_TEXTDOMAIN),
+		'type' => 'checkbox',
+		'section' => 'logincust_addon_section',
+		'priority' => 5,
+		'settings' => 'logincust_security_captcha'
+	));
+	
+	$wp_customize->add_setting('logincust_security_captcha_key', array(
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+	));
+
+	$wp_customize->add_control('logincust_security_captcha_key', array(
+		'label' => __('reCAPTCHA public key', LOGINCUST_TEXTDOMAIN),
+		'section' => 'logincust_addon_section',
+		'priority' => 10,
+		'settings' => 'logincust_security_captcha_key'
+	));
+	
+	require_once plugin_dir_path( __FILE__ ) . '/includes/class-login-customizer-security-select-control.php';
+	
+	$wp_customize->add_setting('logincust_security_captcha_style', array(
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+	));
+
+	$wp_customize->add_control(new Login_Customizer_Security_Select_Control($wp_customize,'logincust_security_captcha_style', array(
+		'label' => __('reCAPTCHA style', LOGINCUST_TEXTDOMAIN),
+		'section' => 'logincust_addon_section',
+		'priority' => 15,
+		'settings' => 'logincust_security_captcha_style'
+	), array('light','dark'), 'logincust_security_captcha_style'));
+	
+	
+	$wp_customize->add_setting('logincust_security_captcha_data_type', array(
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+	));
+
+	$wp_customize->add_control(new Login_Customizer_Security_Select_Control($wp_customize,'logincust_security_captcha_data_type', array(
+		'label' => __('reCAPTCHA data type', LOGINCUST_TEXTDOMAIN),
+		'section' => 'logincust_addon_section',
+		'priority' => 20,
+		'settings' => 'logincust_security_captcha_data_type'
+	), array('image','audio'), 'logincust_security_captcha_data_type'));
+	
+	require_once plugin_dir_path( __FILE__ ) . '/includes/class-login-customizer-security-numeric-control.php';
+	
+	$wp_customize->add_setting( 'logincust_security_login_limits', array(
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'default' => 3
+	)); 
+	
+	$wp_customize->add_control( new Login_Customizer_Security_Number_Control( $wp_customize,'logincust_security_login_limits', array( 
+		'type' => 'text', 
+		'description' => __('Set this 0 if you want unlimited attempts',LOGINCUST_TEXTDOMAIN),
+		'label' => __( 'Login limit attempts', LOGINCUST_TEXTDOMAIN ), 
+		'section' => 'logincust_addon_section', 
+		'settings' => 'logincust_security_login_limits', 
+		'priority' => 25
+	), '1' ) ); 
+	
+	$wp_customize->add_setting( 'logincust_security_logins_timeout', array(
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'default' => 3
+	)); 
+	
+	$wp_customize->add_control( new Login_Customizer_Security_Number_Control( $wp_customize,'logincust_security_logins_timeout', array( 
+		'type' => 'text', 
+		'label' => __( 'Login timeout', LOGINCUST_TEXTDOMAIN ), 
+		'section' => 'logincust_addon_section', 
+		'settings' => 'logincust_security_logins_timeout', 
+		'priority' => 30
+	), '0.1' ) ); 
 }
 add_action('customize_register', 'logincust_customize_register');
 
