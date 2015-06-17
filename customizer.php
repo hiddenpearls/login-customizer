@@ -488,6 +488,15 @@ function logincust_customize_register($wp_customize)
 }
 add_action('customize_register', 'logincust_customize_register');
 
+/**
+ * Enqueue script for custom customize control.
+ */
+function custom_customize_enqueue() {
+	wp_enqueue_script( 'custom-customize', plugin_dir_url( __FILE__ ) . '/js/disable_controls.js', array( 'jquery', 'customize-controls' ), false, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'custom_customize_enqueue' );
+
+
 function logincust_customizer() {
 $logo_url = get_option('logincust_logo');
 $logo_width = get_option('logincust_logo_width');

@@ -4,11 +4,6 @@ function logincust_register_options_page() {
 }
 add_action('admin_menu', 'logincust_register_options_page');
  
-function logincust_register_scripts(){
-	wp_enqueue_script( 'customizer_disable_controls', plugin_dir_url( __FILE__ ) . '/js/disable_controls.js', array( 'jquery' ), '1,0', false );
-}
-add_action('customize_controls_enqueue_scripts', 'logincust_register_scripts');
- 
 function logincust_options_page() {
 	?>
 <div class="wrap">
