@@ -19,6 +19,6 @@ function logincust_check_security(){
 	return (defined("LOGINCUST_SECURITY_VERSION"));
 }
 
+
 include( LOGINCUST_FREE_PATH . 'customizer.php');
 include( LOGINCUST_FREE_PATH . 'option-panel.php');
-?>
