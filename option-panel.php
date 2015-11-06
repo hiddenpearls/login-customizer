@@ -63,7 +63,7 @@ function logincust_options_page() {
     <a href="<?php echo get_admin_url(); ?>customize.php?url=<?php echo wp_login_url(); ?>" id="submit" class="button button-primary"><?php _e('Start Customizing!', LOGINCUST_TEXTDOMAIN); ?></a>
     <h3><?php _e('Credits/Support (All the unwanted crap)', LOGINCUST_TEXTDOMAIN); ?></h3>
     <p><?php _e('If you find any issues or if you want to contribute, then please free to drop me a mail at', LOGINCUST_TEXTDOMAIN); ?> <a href="https://themeisle.com/contact" target="_blank" rel="nofollow"><?php _e('this link', LOGINCUST_TEXTDOMAIN); ?></a>.</p>
-    <p><?php _e('Thanks for using this plugin. Don not forget to leave a review.', LOGINCUST_TEXTDOMAIN); ?></p>
+    <p><?php _e('Thanks for using this plugin. Do not forget to leave a review.', LOGINCUST_TEXTDOMAIN); ?></p>
     <p> <a href="https://themeisle.com/" target="_blank" rel="nofollow"><?php _e('ThemeIsle :)', LOGINCUST_TEXTDOMAIN); ?></a>.</p>
 </div>
 <?php
