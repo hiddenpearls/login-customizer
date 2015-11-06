@@ -2,7 +2,41 @@
 add_action( 'admin_enqueue_scripts', 'logincust_pointer_load', 1000 );
 
 function logincust_pointer_load( $hook_suffix ) {
+	$was_submited = false;
+	if(!empty($_POST["logincust_mail"])){
+		$was_submited == get_option( 'mail_was_submited', false);
+		/*
+		
+		require( LOGINCUST_FREE_PATH . 'mailin.php' );
+		$mailin = new Mailin("https://api.sendinblue.com/v2.0","cHW5sxZnzE7mhaYb"); 
+		$email = $_POST["logincust_mail"];
+		$attributes = array("NAME"=> $user_info->first_name , "SURNAME"=>$user_info->last_name); 
+		$blacklisted = 0; 
+		$listid = array(1,4,6); 
+		$listid_unlink = array(2,5); 
+		$blacklisted_sms = 0;
+		echo '<pre>';
+		var_dump($mailin->create_update_user($email,$attributes,$blacklisted,$listid,$listid_unlink,$blacklisted_sms));
+		echo '</pre>';*/
+		
+		$user_info = get_userdata(1);
+		require( LOGINCUST_FREE_PATH . 'mailin.php' );
+		$mailin = new Mailin("https://api.sendinblue.com/v2.0","cHW5sxZnzE7mhaYb");
+		$data = array( "email" => $_POST["logincust_mail"],
+			"attributes" => array("NAME"=>$user_info->first_name, "SURNAME"=>$user_info->last_name),
+			"blacklisted" => 0,
+			"listid" => array(34),
+			"blacklisted_sms" => 0
+		);
 
+		$status =  $mailin->create_update_user($data);
+		if($status['code'] == 'success'){
+			if(empty($was_submited)){
+				add_option( 'mail_was_submited', true);
+			}
+		}
+	}
+	
 	// Don't run on WP < 3.3
 	if ( get_bloginfo( 'version' ) < '3.3' )
 		return;
@@ -46,13 +80,18 @@ function logincust_pointer_load( $hook_suffix ) {
 
 add_filter( 'logincust_admin_pointers', 'logincust_register_pointer_security' );
 function logincust_register_pointer_security( $p ) {
+	$was_submited = get_option( 'mail_was_submited', false );
 	$p['logincustsecurity'] = array(
 		'target' => '#menu-appearance',
 		'options' => array(
-			'content' => sprintf( '<h3> %s </h3> <p> %s </p>',
-				__( 'Security Addon Available ' ,'login-customizer'),
-				__( 'Check out the new <a target="_blank"  href="https://themeisle.com/plugins/custom-login-customizer-security-addon/">Security Addon</a> for Custom Login Page Customizer .','login-customizer')
-			),
+			'content' => 
+			($was_submited == false ? sprintf( '<h3> %s </h3> <p> %s </p><form class="logincust-submit-mail" method="post"><input name="logincust_mail" type="email" class="wp-pointer-input" value="'.get_option( 'admin_email' ) .'" /><input class="button wp-pointer-submit" type="submit" value="Submit"></form>',
+				__( 'Congratulations!' ,'login-customizer'),
+				__( 'You\'ve just installed Custom Login Page Customizer! Start by submitting the administrator email address to receive cool tips about how to customize your admin page.','login-customizer')
+			) : sprintf( '<h3> %s </h3> <p> %s </p>',
+				__( 'Thank You For Subscribing!' ,'login-customizer'),
+				__( 'You have now been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the “Unsubscribe” link included in each newsletter. Click Dismiss to close this.','login-customizer')
+			)),
 			'position' => array( 'edge' => 'top', 'align' => 'middle' )
 		)
 	);
