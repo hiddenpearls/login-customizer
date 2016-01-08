@@ -4,6 +4,11 @@ function logincust_register_options_page() {
 }
 add_action('admin_menu', 'logincust_register_options_page');
 
+function logincust_admin_style() {
+  wp_enqueue_style( 'admin_style', LOGINCUST_FREE_URL . '/css/admin.css',array(), LOGINCUST_VERSION, false );
+}
+add_action( 'admin_enqueue_scripts', 'logincust_admin_style' );
+
 function logincust_register_scripts(){
 	if(!logincust_check_security()){
 		wp_enqueue_style( 'customizer_disable_controls_css', LOGINCUST_FREE_URL . '/css/disable_controls.css',array(), LOGINCUST_VERSION, false );
@@ -57,7 +62,29 @@ function logincust_options_page() {
     <p><?php _e('If you find any issues or if you want to contribute, then please free to drop me a mail at', LOGINCUST_TEXTDOMAIN); ?> <a href="https://themeisle.com/contact" target="_blank" rel="nofollow"><?php _e('this link', LOGINCUST_TEXTDOMAIN); ?></a>.</p>
     <p><?php _e('Thanks for using this plugin. Don not forget to leave a review.', LOGINCUST_TEXTDOMAIN); ?></p>
     <p> <a href="https://themeisle.com/" target="_blank" rel="nofollow"><?php _e('ThemeIsle :)', LOGINCUST_TEXTDOMAIN); ?></a>.</p>
+
+    <h3><?php _e('Subscribe', LOGINCUST_TEXTDOMAIN); ?></h3>
+    <form class="logincust-submit-mail" method="post"><input name="logincust_mail" type="email" class="wp-pointer-input" value="<?php echo get_option( 'admin_email' ); ?>" /><input class="button wp-pointer-submit" type="submit" value="Submit"></form>
 </div>
 <?php
+}
+
+function logincust_subscribe( $p ) {
+	$was_submited = get_option( 'mail_was_submited', false );
+	$p['logincustsecurity'] = array(
+		'target' => '#menu-appearance',
+		'options' => array(
+			'content' =>
+			($was_submited == false ? sprintf( '<h3> %s </h3> <p> %s </p><form class="logincust-submit-mail" method="post"><input name="logincust_mail" type="email" class="wp-pointer-input" value="'.get_option( 'admin_email' ) .'" /><input class="button wp-pointer-submit" type="submit" value="Submit"></form>',
+				__( 'Congratulations!' ,'login-customizer'),
+				__( 'You\'ve just installed Custom Login Page Customizer! Start by submitting the administrator email address to receive cool tips about how to customize your admin page.','login-customizer')
+			) : sprintf( '<h3> %s </h3> <p> %s </p>',
+				__( 'Thank You For Subscribing!' ,'login-customizer'),
+				__( 'You have now been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the “Unsubscribe” link included in each newsletter. Click Dismiss to close this.','login-customizer')
+			)),
+			'position' => array( 'edge' => 'top', 'align' => 'middle' )
+		)
+	);
+	return $p;
 }
 ?>
