@@ -47,3 +47,10 @@ Please visit <a target="_blank" rel="friend" href="http://themeisle.com">this li
 
 1. Example Custom Login Page
 2. Another Great Custom Login Page Example
+
+== Changelog ==
+
+**New in 1.0.6**
+
+ - Added subscribe form for usefull wordpress tips and tricks
+ - Fixed some design issues
