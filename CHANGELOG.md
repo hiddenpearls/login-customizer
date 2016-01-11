@@ -1,5 +1,13 @@
 
 
+### 1.0.6 - 11/01/2016
+
+ Changes: 
+
+
+ * added subscribe form
+
+
 ### 1.0.4 - 11/01/2016
 
  Changes: 
