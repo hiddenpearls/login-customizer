@@ -45,16 +45,16 @@ function logincust_options_page() { ?>
     		$status =  $mailin->create_update_user($data);
     		if($status['code'] == 'success'){
           if( empty( $was_submited ) ){
-    				add_option( 'mail_was_submited', true);
+    				add_option( 'logincust_mail_was_submited', true);
     			}
         }
       }
 
-      $was_submited = get_option( 'mail_was_submited', false);
+      $was_submited = get_option( 'logincust_mail_was_submited', false);
       if( $was_submited == false ){
-        echo sprintf( '<p> %s </p><form class="logincust-submit-mail" method="post"><input name="logincust_mail" type="email" class="wp-pointer-input" value="'.get_option( 'admin_email' ) .'" /><input class="button wp-pointer-submit" type="submit" value="Submit"></form>', esc_html__('Our free, 4-lesson course on how to make your WordPress site run incredibly fast is barely waiting for its students. Ready to learn how to reduce your loading times by half? Come and join the 1st lesson here!', LOGINCUST_TEXTDOMAIN ) );
+        echo sprintf( '<p> %s </p><form class="logincust-submit-mail" method="post"><input name="logincust_mail" type="email" class="wp-pointer-input" value="'.get_option( 'admin_email' ) .'" /><input class="button wp-pointer-submit button-primary" type="submit" value="Join Now !"></form>', esc_html__('Our free, 4-lesson course on how to make your WordPress site run incredibly fast is barely waiting for its students. Ready to learn how to reduce your loading times by half? Come and join the 1st lesson here!', LOGINCUST_TEXTDOMAIN ) );
       } else {
-        echo sprintf( '<p> %s </p>', esc_html__( 'Thank you for subscribing! You have been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the “Unsubscribe” link included in each newsletter.', LOGINCUST_TEXTDOMAIN ) );
+        echo sprintf( '<p> %s </p>', esc_html__( 'Thank you for subscribing! You have been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the  Unsubscribe  link included in each newsletter.', LOGINCUST_TEXTDOMAIN ) );
       } ?>
 </div>
 <?php
@@ -69,7 +69,7 @@ add_action( 'wp_dashboard_setup', 'logincust_dashboard_widget' );
 function logincust_subscribe_widget() {
   if(!empty($_POST["logincust_mail"])){
     require( LOGINCUST_FREE_PATH . 'mailin.php' );
-    $was_submited = get_option( 'mail_was_submited', false);
+    $was_submited = get_option( 'logincust_mail_was_submited', false);
     $user_info = get_userdata(1);
     $mailin = new Mailin("https://api.sendinblue.com/v2.0","cHW5sxZnzE7mhaYb");
     $data = array( "email" => $_POST["logincust_mail"],
@@ -81,15 +81,15 @@ function logincust_subscribe_widget() {
     $status =  $mailin->create_update_user($data);
     if($status['code'] == 'success'){
       if( empty( $was_submited ) ){
-        add_option( 'mail_was_submited', true);
+        add_option( 'logincust_mail_was_submited', true);
       }
     }
   }
 
-  $was_submited = get_option( 'mail_was_submited', false);
+  $was_submited = get_option( 'logincust_mail_was_submited', false);
   if( $was_submited == false ){
     echo sprintf( '<p> %s </p><form class="logincust-submit-mail" method="post"><input name="logincust_mail" type="email" class="wp-pointer-input" value="'.get_option( 'admin_email' ) .'" /><input class="button wp-pointer-submit" type="submit" value="Submit"></form>', esc_html__('Our free, 4-lesson course on how to make your WordPress site run incredibly fast is barely waiting for its students. Ready to learn how to reduce your loading times by half? Come and join the 1st lesson here!', LOGINCUST_TEXTDOMAIN ) );
   } else {
-    echo sprintf( '<p> %s </p>', esc_html__( 'Thank you for subscribing! You have been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the “Unsubscribe” link included in each newsletter.', LOGINCUST_TEXTDOMAIN ) );
+    echo sprintf( '<p> %s </p>', esc_html__( 'Thank you for subscribing! You have been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the “Unsubscribe�? link included in each newsletter.', LOGINCUST_TEXTDOMAIN ) );
   }
 }
