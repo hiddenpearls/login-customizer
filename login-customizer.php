@@ -38,4 +38,3 @@ function logincust_check_security() {
 
 include( LOGINCUST_FREE_PATH . 'customizer.php' );
 include( LOGINCUST_FREE_PATH . 'option-panel.php' );
-include( LOGINCUST_FREE_PATH . 'includes/class-login-customizer-security-internal-pointer.php' );
