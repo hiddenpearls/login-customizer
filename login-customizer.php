@@ -13,10 +13,10 @@
  * Description: Custom Login Customizer plugin allows you to easily customize your login page straight from your WordPress Customizer! Awesome, right?
  * Author: Hardeep Asrani
  * Author URI:  https://themeisle.com/
- * Version: 1.0.4
+ * Version: 1.0.6
  */
 
-define( 'LOGINCUST_VERSION','1.0.4' );
+define( 'LOGINCUST_VERSION','1.0.6' );
 define( 'LOGINCUST_FREE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LOGINCUST_FREE_URL', plugin_dir_url( __FILE__ ) );
 if ( ! defined( 'LOGINCUST_TEXTDOMAIN' ) ) {
@@ -34,7 +34,10 @@ define( 'LOGINCUST_PRO_TEXT',__( '<p class="logincust_pro_text">You need to buy 
 function logincust_check_security() {
 	return ( defined( 'LOGINCUST_SECURITY_VERSION' ) );
 }
-
+if (!class_exists('TAV_Remote_Notification_Client')) {
+	require( LOGINCUST_FREE_PATH.'/includes/class-remote-notification-client.php' );
+}
 
 include( LOGINCUST_FREE_PATH . 'customizer.php' );
 include( LOGINCUST_FREE_PATH . 'option-panel.php' );
+$notification = new TAV_Remote_Notification_Client( 48, '0f7b61c2420ea7ec', 'http://themeisle.com?post_type=notification' );
