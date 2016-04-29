@@ -1,5 +1,35 @@
 <?php
 
+// Added by Ash/Upwork
+function logincust_get_transport()
+{
+    //return !isset($wp_customize->selective_refresh) ? "postMessage" : "refresh";
+    return "postMessage";
+}
+
+function logincust_register_partials($wp_customize)
+{
+    if (!isset($wp_customize->selective_refresh)) {
+        add_action('customize_preview_init', 'logincust_preview_init');
+        return;
+    }
+
+    $wp_customize->selective_refresh->add_partial( 'logincust_bg_color', array(
+        'selector' => array('html', 'body'),
+        'container_inclusive' => false,
+        'render_callback' => function() {
+            get_option('logincust_bg_color');
+        },
+    ) );
+}
+
+function logincust_preview_init()
+{
+    wp_enqueue_script('logincust', LOGINCUST_FREE_URL . '/js/admin.js' , array( 'customize-preview', 'jquery' ), LOGINCUST_VERSION, false);
+}
+// Added by Ash/Upwork
+
+
 function logincust_customize_register($wp_customize)
 {
     $wp_customize->add_panel( 'logincust_panel', array(
@@ -124,6 +154,7 @@ function logincust_customize_register($wp_customize)
         'default' => '#F1F1F1',
         'type' => 'option',
         'capability' => 'edit_theme_options',
+        'transport' => logincust_get_transport(),
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'logincust_bg_color', array(
@@ -502,6 +533,10 @@ function logincust_customize_register($wp_customize)
 			'priority' => 30
 		), '0.1' ) );
     }
+
+    // Added by Ash/Upwork
+    logincust_register_partials($wp_customize);
+    // Added by Ash/Upwork
 }
 add_action('customize_register', 'logincust_customize_register');
 
