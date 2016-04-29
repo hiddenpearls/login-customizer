@@ -9,10 +9,10 @@ function logincust_get_transport()
 
 function logincust_register_partials($wp_customize)
 {
-    if (!isset($wp_customize->selective_refresh)) {
+    //if (!isset($wp_customize->selective_refresh)) {
         add_action('customize_preview_init', 'logincust_preview_init');
         return;
-    }
+    //}
 
     $wp_customize->selective_refresh->add_partial( 'logincust_bg_color', array(
         'selector' => array('html', 'body'),
