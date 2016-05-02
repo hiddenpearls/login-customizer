@@ -26,6 +26,8 @@ function logincust_register_partials($wp_customize)
 function logincust_preview_init()
 {
     wp_enqueue_script('logincust', LOGINCUST_FREE_URL . '/js/admin.js' , array( 'customize-preview', 'jquery' ), LOGINCUST_VERSION, false);
+	wp_localize_script('logincust', "login_cust", array("name" => "logincust_bg_color"));
+ 
 }
 // Added by Ash/Upwork
 
