@@ -1,7 +1,7 @@
 	=== Custom Login Page Customizer ===
-Version: 1.0.6
+Version: 1.0.4
 Requires at least: 4.0
-Tested up to: 4.4.1
+Tested up to: 4.3
 Contributors: codeinwp, hardeepasrani,marius_codeinwp
 Author URI: https://themeisle.com
 Tags: login, customizer, logo, login logo, login customizer, login page,admin, branding, customization, custom login, error, login error, custom login pro
@@ -27,7 +27,7 @@ Upcoming Custom Login Page Customizer features:
 
 You can customize almost anything and make it look the way you want.
 
-If you are looking for the best WordPress themes check this out : <a href="http://www.codeinwp.com/blog/10-best-bootstrap-based-wordpress-themes/" target="_blank" rel="friend">http://www.codeinwp.com/blog/10-best-bootstrap-based-wordpress-themes/</a>
+If you are looking for the best WordPress themes that works with Login Customizer check this out : <a href="http://www.codeinwp.com/blog/best-free-wordpress-themes/" target="_blank" rel="friend">http://www.codeinwp.com/blog/best-free-wordpress-themes/</a>
 == Installation ==
 
 1. Upload the plugin to your 'wp-content/plugins' directory, or download and install automatically through your admin panel.
@@ -47,10 +47,3 @@ Please visit <a target="_blank" rel="friend" href="http://themeisle.com">this li
 
 1. Example Custom Login Page
 2. Another Great Custom Login Page Example
-
-== Changelog ==
-
-**New in 1.0.6**
-
- - Added subscribe form for usefull wordpress tips and tricks
- - Fixed some design issues
