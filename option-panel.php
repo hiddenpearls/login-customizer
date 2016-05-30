@@ -9,12 +9,6 @@ function logincust_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'logincust_admin_style' );
 
-function logincust_register_scripts(){
-	if(!logincust_check_security()){
-		wp_enqueue_style( 'customizer_disable_controls_css', LOGINCUST_FREE_URL . '/css/disable_controls.css',array(), LOGINCUST_VERSION, false );
-	}
-}
-add_action('customize_controls_enqueue_scripts', 'logincust_register_scripts');
 
 function logincust_options_page() { ?>
 <div class="wrap">
