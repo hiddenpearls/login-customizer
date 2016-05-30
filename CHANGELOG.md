@@ -1,4 +1,9 @@
 
+### 1.0.7 - 30/05/2016
+**Changes:** 
+- Improved customizer settings
+- Removed security addon mentions in the free version
+
 
 ### 1.0.6 - 11/01/2016
 
