@@ -32,7 +32,7 @@ In your WordPress Dashboard, navigate to Appearance > Custom Login Customizer to
 
 = How to donate or contribute? =
 
-Please visit <a target="_blank" rel="friend" href="http://themeisle.com">this link</a> for more info.
+Please visit <a target="_blank" rel="nofollow" href="http://themeisle.com">this link</a> for more info.
 
 == Screenshots ==
 
