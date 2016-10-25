@@ -13,7 +13,7 @@
  * Description: Custom Login Customizer plugin allows you to easily customize your login page straight from your WordPress Customizer! Awesome, right?
  * Author: Hardeep Asrani
  * Author URI:  https://themeisle.com/
- * Version: 1.0.7
+ * Version: 1.0.8
  */
 
 define( 'LOGINCUST_VERSION','1.0.7' );
