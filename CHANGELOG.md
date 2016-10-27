@@ -1,4 +1,8 @@
 
+### 1.0.8 - 27/10/2016
+**Changes:** 
+- Removed notification script
+
 ### 1.0.7 - 30/05/2016
 **Changes:** 
 - Improved customizer settings
