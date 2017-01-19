@@ -1,4 +1,8 @@
 
+### 1.1.0 - 19/01/2017
+**Changes:** 
+- Added dashboard widget
+
 ### 1.0.8 - 27/10/2016
 **Changes:** 
 - Removed notification script
