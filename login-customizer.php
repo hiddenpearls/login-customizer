@@ -38,3 +38,5 @@ function logincust_check_security() {
 
 include( LOGINCUST_FREE_PATH . 'customizer.php' );
 include( LOGINCUST_FREE_PATH . 'option-panel.php' );
+
+require dirname( __FILE__ ) . '/dashboard/dashboard.php';
