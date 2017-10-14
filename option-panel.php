@@ -84,6 +84,6 @@ function logincust_subscribe_widget() {
   if( $was_submited == false ){
     echo sprintf( '<p> %s </p><form class="logincust-submit-mail" method="post"><input name="logincust_mail" type="email" class="wp-pointer-input" value="'.get_option( 'admin_email' ) .'" /><input class="button wp-pointer-submit" type="submit" value="Submit"></form>', esc_html__('Our free, 4-lesson course on how to make your WordPress site run incredibly fast is barely waiting for its students. Ready to learn how to reduce your loading times by half? Come and join the 1st lesson here!', LOGINCUST_TEXTDOMAIN ) );
   } else {
-    echo sprintf( '<p> %s </p>', esc_html__( 'Thank you for subscribing! You have been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the â€œUnsubscribeâ€? link included in each newsletter.', LOGINCUST_TEXTDOMAIN ) );
+    echo sprintf( '<p> %s </p>', esc_html__( 'Thank you for subscribing! You have been added to the mailing list and will receive the next email information in the coming weeks. If you ever wish to unsubscribe, simply use the Unsubscribe link included in each newsletter.', LOGINCUST_TEXTDOMAIN ) );
   }
 }
