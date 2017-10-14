@@ -74,7 +74,7 @@ if ( ! class_exists( 'THEMEISLE_DASHBOARD' ) ) {
 		 * Setup class variables
 		 */
 		public function setup_vars() {
-			$this->dashboard_name = apply_filters( 'themeisle_sdk_dashboard_widget_name', 'WordPress Guides/Tutorials' );
+			$this->dashboard_name = apply_filters( 'themeisle_sdk_dashboard_widget_name', '[Login Customizer] WordPress Guides/Tutorials' );
 			$this->feeds          = apply_filters( 'themeisle_sdk_dashboard_widget_feeds', array(
 				'https://themeisle.com/blog/feed'
 			) );
