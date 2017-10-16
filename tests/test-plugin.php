@@ -12,6 +12,6 @@
 class Test_LoginCustomizer extends WP_UnitTestCase {
 
 	public function generic() {
-		$this->assertTrue();
+		$this->assertTrue( class_exists( 'ThemeIsle_SDK_Loader' ) );
 	}
 }
