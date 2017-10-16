@@ -1,7 +1,7 @@
 	=== Custom Login Page Customizer ===
 Version: 1.1.0
 Requires at least: 4.0
-Tested up to: 4.7.1
+Tested up to: 4.8
 Contributors: codeinwp, hardeepasrani,marius_codeinwp
 Author URI: https://themeisle.com
 Tags: login, customizer, logo, login logo, login customizer, login page,admin, branding, customization, custom login, error, login error, custom login pro

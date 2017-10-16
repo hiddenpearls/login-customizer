@@ -1,0 +1,28 @@
+{
+  "name": "feedzy-rss-feeds",
+  "version": "1.2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codeinwp/login-customizer.git"
+  },
+  "keywords": [
+    "wordpress-plugin"
+  ],
+  "textdomain": "login-customizer",
+  "category": "plugins",
+  "author": "ThemeIsle <friends@themeisle.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/Codeinwp/login-customizer/issues"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/Codeinwp/login-customizer/issues",
+    "languageteam": "Themeisle Translate <friends@themeisle.com>",
+    "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-plugin-fleet": "codeinwp/grunt-plugin-fleet",
+    "load-project-config": "~0.2.0"
+  }
+}
