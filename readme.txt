@@ -1,5 +1,5 @@
-	=== Custom Login Page Customizer ===
-Version: 1.1.0
+=== Custom Login Page Customizer ===
+Stable tag: trunk
 Requires at least: 4.0
 Tested up to: 4.8
 Contributors: codeinwp, hardeepasrani,marius_codeinwp
