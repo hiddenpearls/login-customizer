@@ -1,4 +1,9 @@
 
+ ### v1.2.0 - 2017-10-16 
+ **Changes:** 
+ * Adds tested up to wp 4.8.
+* Improvements to dashboard widget, rollback.
+ 
 ### 1.1.0 - 19/01/2017
 **Changes:** 
 - Added dashboard widget

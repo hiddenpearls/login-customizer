@@ -1,0 +1,263 @@
+# Copyright (C) 2017 Hardeep Asrani
+# This file is distributed under the same license as the Custom Login Page Customizer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Login Page Customizer 1.2.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Codeinwp/login-customizer/issues\n"
+"POT-Creation-Date: 2017-10-16 09:40:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Themeisle Translate Team <friends@themeisle.com>\n"
+"Language-Team: Themeisle Translate <friends@themeisle.com>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: customizer.php:9 option-panel.php:3 option-panel.php:17
+msgid "Login Customizer"
+msgstr ""
+
+#: customizer.php:10
+msgid ""
+"This section allows you to customize the login page of your "
+"website.<br/>Login Customizer by <a target=\"_blank\" rel=\"nofollow\" "
+"href=\"https://themeisle.com\">ThemeIsle</a>"
+msgstr ""
+
+#: customizer.php:17
+msgid "Logo"
+msgstr ""
+
+#: customizer.php:25
+msgid "Background"
+msgstr ""
+
+#: customizer.php:33
+msgid "Form Background"
+msgstr ""
+
+#: customizer.php:41
+msgid "Form Styling"
+msgstr ""
+
+#: customizer.php:49
+msgid "Fields Styling"
+msgstr ""
+
+#: customizer.php:57
+msgid "Button Styling"
+msgstr ""
+
+#: customizer.php:65
+msgid "Other"
+msgstr ""
+
+#: customizer.php:73
+msgid "Security"
+msgstr ""
+
+#: customizer.php:88
+msgid "Login Logo"
+msgstr ""
+
+#: customizer.php:106
+msgid "Logo Width"
+msgstr ""
+
+#: customizer.php:123
+msgid "Logo Height"
+msgstr ""
+
+#: customizer.php:140
+msgid "Padding Bottom"
+msgstr ""
+
+#: customizer.php:157 customizer.php:210
+msgid "Background Image"
+msgstr ""
+
+#: customizer.php:176 customizer.php:229
+msgid "Background Color"
+msgstr ""
+
+#: customizer.php:193
+msgid "Background Size"
+msgstr ""
+
+#: customizer.php:247
+msgid "Width"
+msgstr ""
+
+#: customizer.php:264
+msgid "Height"
+msgstr ""
+
+#: customizer.php:281
+msgid "Padding"
+msgstr ""
+
+#: customizer.php:297
+msgid "Border (Example: 2px dotted black) "
+msgstr ""
+
+#: customizer.php:314
+msgid "Input Field Width"
+msgstr ""
+
+#: customizer.php:331
+msgid "Input Field Margin"
+msgstr ""
+
+#: customizer.php:349
+msgid "Input Field Background"
+msgstr ""
+
+#: customizer.php:368
+msgid "Input Field Color"
+msgstr ""
+
+#: customizer.php:387
+msgid "Label Color"
+msgstr ""
+
+#: customizer.php:406
+msgid "Button Background"
+msgstr ""
+
+#: customizer.php:425
+msgid "Button Border"
+msgstr ""
+
+#: customizer.php:444
+msgid "Button Background (Hover)"
+msgstr ""
+
+#: customizer.php:463
+msgid "Button Border (Hover)"
+msgstr ""
+
+#: customizer.php:482
+msgid "Button Box Shadow"
+msgstr ""
+
+#: customizer.php:501
+msgid "Button Color"
+msgstr ""
+
+#: customizer.php:520
+msgid "Text Color"
+msgstr ""
+
+#: customizer.php:539
+msgid "Text Color (Hover)"
+msgstr ""
+
+#: customizer.php:556
+msgid "Custom CSS"
+msgstr ""
+
+#: login-customizer.php:25
+msgid ""
+"<p class=\"logincust_pro_text\">You need to buy the <a "
+"href=\"http://themeisle.com/plugins/custom-login-customizer-security-addon/\""
+" target=\"_blank\">SECURITY ADDON</a> to have this options. </p>"
+msgstr ""
+
+#: option-panel.php:18
+msgid "Howdy!"
+msgstr ""
+
+#: option-panel.php:19
+msgid ""
+"Login Customizer plugin allows you to easily customize your login page "
+"straight from your WordPress Customizer! You can preview your changes "
+"before you save them! Awesome, right?"
+msgstr ""
+
+#: option-panel.php:20
+msgid "In Customizer, navigate to Login Customizer"
+msgstr ""
+
+#: option-panel.php:21
+msgid "Start Customizing!"
+msgstr ""
+
+#: option-panel.php:22
+msgid "Credits/Support (All the unwanted crap)"
+msgstr ""
+
+#: option-panel.php:23
+msgid ""
+"If you find any issues or if you want to contribute, then please free to "
+"drop me a mail at"
+msgstr ""
+
+#: option-panel.php:23
+msgid "this link"
+msgstr ""
+
+#: option-panel.php:24
+msgid "Thanks for using this plugin. Don not forget to leave a review."
+msgstr ""
+
+#: option-panel.php:25
+msgid "ThemeIsle :)"
+msgstr ""
+
+#: option-panel.php:27 option-panel.php:62
+msgid "Subscribe"
+msgstr ""
+
+#: option-panel.php:51 option-panel.php:89
+msgid ""
+"Our free, 4-lesson course on how to make your WordPress site run incredibly "
+"fast is barely waiting for its students. Ready to learn how to reduce your "
+"loading times by half? Come and join the 1st lesson here!"
+msgstr ""
+
+#: option-panel.php:53
+msgid ""
+"Thank you for subscribing! You have been added to the mailing list and will "
+"receive the next email information in the coming weeks. If you ever wish to "
+"unsubscribe, simply use the  Unsubscribe  link included in each newsletter."
+msgstr ""
+
+#: option-panel.php:91
+msgid ""
+"Thank you for subscribing! You have been added to the mailing list and will "
+"receive the next email information in the coming weeks. If you ever wish to "
+"unsubscribe, simply use the Unsubscribe link included in each newsletter."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Custom Login Page Customizer"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://themeisle.com/plugins/login-customizer/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Custom Login Customizer plugin allows you to easily customize your login "
+"page straight from your WordPress Customizer! Awesome, right?"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Hardeep Asrani"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://themeisle.com/"
+msgstr ""
