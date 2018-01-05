@@ -40,6 +40,12 @@ Please visit <a target="_blank" rel="nofollow" href="http://themeisle.com">this 
 2. Another Great Custom Login Page Example
 
 == Changelog ==
+= 1.2.1 - 2018-01-05  = 
+
+* Improves compatiblity with latest WordPress version.
+* Sync ThemeIsle SDK.
+
+
 = 1.2.0 - 2017-10-16  = 
 
 * Adds tested up to wp 4.8.

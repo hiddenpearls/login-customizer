@@ -1,4 +1,9 @@
 
+ ### v1.2.1 - 2018-01-05 
+ **Changes:** 
+ * Improves compatiblity with latest WordPress version.
+* Sync ThemeIsle SDK.
+ 
  ### v1.2.0 - 2017-10-16 
  **Changes:** 
  * Adds tested up to wp 4.8.

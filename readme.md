@@ -1,7 +1,7 @@
-	=== Custom Login Page Customizer ===
-**Version:** 1.1.0  
+# Custom Login Page Customizer #
+**Stable tag:** trunk  
 **Requires at least:** 4.0  
-**Tested up to:** 4.8  
+**Tested up to:** 4.9  
 **Contributors:** [codeinwp](https://profiles.wordpress.org/codeinwp), [hardeepasrani](https://profiles.wordpress.org/hardeepasrani), [marius_codeinwp](https://profiles.wordpress.org/marius_codeinwp)  
 **Author URI:** https://themeisle.com  
 **Tags:** login, customizer, logo, login logo, login customizer, login page,admin, branding, customization, custom login, error, login error, custom login pro  
@@ -40,6 +40,12 @@ Please visit <a target="_blank" rel="nofollow" href="http://themeisle.com">this 
 2. Another Great Custom Login Page Example
 
 ## Changelog ##
+### 1.2.1 - 2018-01-05  ###
+
+* Improves compatiblity with latest WordPress version.
+* Sync ThemeIsle SDK.
+
+
 ### 1.2.0 - 2017-10-16  ###
 
 * Adds tested up to wp 4.8.
