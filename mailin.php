@@ -39,19 +39,19 @@ class Mailin {
 			echo 'Curl error: ' . curl_error( $ch ) . '\n';
 		}
 		curl_close( $ch );
-		return json_decode( $data,true );
+		return json_decode( $data, true );
 	}
 	public function get( $resource, $input ) {
-		return $this->do_request( $resource,'GET',$input );
+		return $this->do_request( $resource, 'GET', $input );
 	}
 	public function put( $resource, $input ) {
-		return $this->do_request( $resource,'PUT',$input );
+		return $this->do_request( $resource, 'PUT', $input );
 	}
 	public function post( $resource, $input ) {
-		return $this->do_request( $resource,'POST',$input );
+		return $this->do_request( $resource, 'POST', $input );
 	}
 	public function delete( $resource, $input ) {
-		return $this->do_request( $resource,'DELETE',$input );
+		return $this->do_request( $resource, 'DELETE', $input );
 	}
 
 	/*
@@ -59,7 +59,7 @@ class Mailin {
         No input required
     */
 	public function get_account() {
-		return $this->get( 'account','' );
+		return $this->get( 'account', '' );
 	}
 
 	/*
@@ -67,7 +67,7 @@ class Mailin {
         No input required
     */
 	public function get_smtp_details() {
-		return $this->get( 'account/smtpdetail','' );
+		return $this->get( 'account/smtpdetail', '' );
 	}
 
 	/*
@@ -84,7 +84,7 @@ class Mailin {
         @options data {Array} associate_ip: Associate dedicated IPs to reseller child. You can use commas to separate multiple IPs [Optional]
     */
 	public function create_child_account( $data ) {
-		return $this->post( 'account',json_encode( $data ) );
+		return $this->post( 'account', json_encode( $data ) );
 	}
 
 	/*
@@ -99,7 +99,7 @@ class Mailin {
         @options data {Array} disassociate_ip: Disassociate dedicated IPs from reseller child. You can use commas to separate multiple IPs [Optional]
     */
 	public function update_child_account( $data ) {
-		return $this->put( 'account',json_encode( $data ) );
+		return $this->put( 'account', json_encode( $data ) );
 	}
 
 	/*
@@ -108,7 +108,7 @@ class Mailin {
         @options data {String} auth_key: 16 character authorization key of Reseller child to be deleted [Mandatory]
     */
 	public function delete_child_account( $data ) {
-		return $this->delete( 'account/' . $data['auth_key'],'' );
+		return $this->delete( 'account/' . $data['auth_key'], '' );
 	}
 
 	/*
@@ -117,7 +117,7 @@ class Mailin {
         @options data {String} auth_key: 16 character authorization key of Reseller child. Example : To get the details of more than one child account, use, {"key1":"abC01De2fGHI3jkL","key2":"mnO45Pq6rSTU7vWX"} [Mandatory]
     */
 	public function get_reseller_child( $data ) {
-		return $this->post( 'account/getchildv2',json_encode( $data ) );
+		return $this->post( 'account/getchildv2', json_encode( $data ) );
 	}
 
 	/*
@@ -132,7 +132,7 @@ class Mailin {
             - sms_credit {Integer} Number of sms credts
     */
 	public function add_remove_child_credits( $data ) {
-		return $this->post( 'account/addrmvcredit',json_encode( $data ) );
+		return $this->post( 'account/addrmvcredit', json_encode( $data ) );
 	}
 
 	/*
@@ -141,7 +141,7 @@ class Mailin {
         @options data {Integer} id: Unique Id of the campaign [Mandatory]
     */
 	public function get_campaign_v2( $data ) {
-		return $this->get( 'campaign/' . $data['id'] . '/detailsv2','' );
+		return $this->get( 'campaign/' . $data['id'] . '/detailsv2', '' );
 	}
 
 	/*
@@ -153,7 +153,7 @@ class Mailin {
         @options data {Integer} page_limit: This should be a valid number between 1-500 [Optional]
     */
 	public function get_campaigns_v2( $data ) {
-		return $this->get( 'campaign/detailsv2',json_encode( $data ) );
+		return $this->get( 'campaign/detailsv2', json_encode( $data ) );
 	}
 
 	/*
@@ -179,7 +179,7 @@ class Mailin {
 
     */
 	public function create_campaign( $data ) {
-		return $this->post( 'campaign',json_encode( $data ) );
+		return $this->post( 'campaign', json_encode( $data ) );
 	}
 
 	/*
@@ -207,7 +207,7 @@ class Mailin {
 	public function update_campaign( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'campaign/' . $id,json_encode( $data ) );
+		return $this->put( 'campaign/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -216,7 +216,7 @@ class Mailin {
         @options data {Integer} id: Id of campaign to be deleted [Mandatory]
     */
 	public function delete_campaign( $data ) {
-		return $this->delete( 'campaign/' . $data['id'],'' );
+		return $this->delete( 'campaign/' . $data['id'], '' );
 	}
 
 	/*
@@ -234,7 +234,7 @@ class Mailin {
 	public function campaign_report_email( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->post( 'campaign/' . $id . '/report',json_encode( $data ) );
+		return $this->post( 'campaign/' . $id . '/report', json_encode( $data ) );
 	}
 
 	/*
@@ -247,7 +247,7 @@ class Mailin {
 	public function campaign_recipients_export( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->post( 'campaign/' . $id . '/recipients',json_encode( $data ) );
+		return $this->post( 'campaign/' . $id . '/recipients', json_encode( $data ) );
 	}
 
 	/*
@@ -257,7 +257,7 @@ class Mailin {
     */
 
 	public function share_campaign( $data ) {
-		return $this->post( 'campaign/sharelinkv2',json_encode( $data ) );
+		return $this->post( 'campaign/sharelinkv2', json_encode( $data ) );
 	}
 
 	/*
@@ -269,7 +269,7 @@ class Mailin {
 	public function send_bat_email( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->post( 'campaign/' . $id . '/test',json_encode( $data ) );
+		return $this->post( 'campaign/' . $id . '/test', json_encode( $data ) );
 	}
 
 	/*
@@ -281,7 +281,7 @@ class Mailin {
 	public function update_campaign_status( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'campaign/' . $id . '/updatecampstatus',json_encode( $data ) );
+		return $this->put( 'campaign/' . $id . '/updatecampstatus', json_encode( $data ) );
 	}
 
 	/*
@@ -307,7 +307,7 @@ class Mailin {
         @options data {Integer} send_now: Flag to send campaign now. Possible values = 0 (default) & 1. send_now = 0 means campaign can’t be send now, & send_now = 1 means campaign ready to send now [Optional]
     */
 	public function create_trigger_campaign( $data ) {
-		return $this->post( 'campaign',json_encode( $data ) );
+		return $this->post( 'campaign', json_encode( $data ) );
 	}
 
 	/*
@@ -336,7 +336,7 @@ class Mailin {
 	public function update_trigger_campaign( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'campaign/' . $id,json_encode( $data ) );
+		return $this->put( 'campaign/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -346,7 +346,7 @@ class Mailin {
         @options data {Integer} page_limit: This should be a valid number between 1-50 [Mandatory]
     */
 	public function get_folders( $data ) {
-		return $this->get( 'folder',json_encode( $data ) );
+		return $this->get( 'folder', json_encode( $data ) );
 	}
 
 	/*
@@ -355,7 +355,7 @@ class Mailin {
         @options data {Integer} id: Id of folder to get details [Mandatory]
     */
 	public function get_folder( $data ) {
-		return $this->get( 'folder/' . $data['id'],'' );
+		return $this->get( 'folder/' . $data['id'], '' );
 	}
 
 	/*
@@ -364,7 +364,7 @@ class Mailin {
         @options data {String} name: Desired name of the folder to be created [Mandatory]
     */
 	public function create_folder( $data ) {
-		return $this->post( 'folder',json_encode( $data ) );
+		return $this->post( 'folder', json_encode( $data ) );
 	}
 
 	/*
@@ -373,7 +373,7 @@ class Mailin {
         @options data {Integer} id: Id of folder to be deleted [Mandatory]
     */
 	public function delete_folder( $data ) {
-		return $this->delete( 'folder/' . $data['id'],'' );
+		return $this->delete( 'folder/' . $data['id'], '' );
 	}
 
 	/*
@@ -385,7 +385,7 @@ class Mailin {
 	public function update_folder( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'folder/' . $id,json_encode( $data ) );
+		return $this->put( 'folder/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -396,7 +396,7 @@ class Mailin {
         @options data {Integer} page_limit: This should be a valid number between 1-50 [Mandatory]
     */
 	public function get_lists( $data ) {
-		return $this->get( 'list',json_encode( $data ) );
+		return $this->get( 'list', json_encode( $data ) );
 	}
 
 	/*
@@ -405,7 +405,7 @@ class Mailin {
         @options data {Integer} id: Id of list to get details [Mandatory]
     */
 	public function get_list( $data ) {
-		return $this->get( 'list/' . $data['id'],'' );
+		return $this->get( 'list/' . $data['id'], '' );
 	}
 
 	/*
@@ -415,7 +415,7 @@ class Mailin {
         @options data {Integer} list_parent: Folder ID [Mandatory]
     */
 	public function create_list( $data ) {
-		return $this->post( 'list',json_encode( $data ) );
+		return $this->post( 'list', json_encode( $data ) );
 	}
 
 	/*
@@ -428,7 +428,7 @@ class Mailin {
 	public function update_list( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'list/' . $id,json_encode( $data ) );
+		return $this->put( 'list/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -437,7 +437,7 @@ class Mailin {
         @options data {Integer} id: Id of list to be deleted [Mandatory]
     */
 	public function delete_list( $data ) {
-		return $this->delete( 'list/' . $data['id'],'' );
+		return $this->delete( 'list/' . $data['id'], '' );
 	}
 
 	/*
@@ -449,7 +449,7 @@ class Mailin {
         @options data {Integer} page_limit: This should be a valid number between 1-500 [Optional]
     */
 	public function display_list_users( $data ) {
-		return $this->post( 'list/display',json_encode( $data ) );
+		return $this->post( 'list/display', json_encode( $data ) );
 	}
 
 	/*
@@ -462,7 +462,7 @@ class Mailin {
 	public function add_users_list( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->post( 'list/' . $id . '/users',json_encode( $data ) );
+		return $this->post( 'list/' . $id . '/users', json_encode( $data ) );
 	}
 
 	/*
@@ -474,7 +474,7 @@ class Mailin {
 	public function delete_users_list( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->delete( 'list/' . $id . '/delusers',json_encode( $data ) );
+		return $this->delete( 'list/' . $id . '/delusers', json_encode( $data ) );
 	}
 
 	/*
@@ -482,7 +482,7 @@ class Mailin {
         No input required
     */
 	public function get_attributes() {
-		return $this->get( 'attribute','' );
+		return $this->get( 'attribute', '' );
 	}
 
 	/*
@@ -491,7 +491,7 @@ class Mailin {
         @options data {String} type: Type of attribute. Possible values – normal, transactional, category, calculated & global [Optional]
     */
 	public function get_attribute( $data ) {
-		return $this->get( 'attribute/' . $data['type'],'' );
+		return $this->get( 'attribute/' . $data['type'], '' );
 	}
 
 	/*
@@ -502,7 +502,7 @@ class Mailin {
         The name and data value of ‘category’, ‘calculated’ & ‘global’, should be sent as JSON string. Example: ‘[{ "name":"ATTRIBUTE_NAME1", "value":"Attribute_value1" }, { "name":"ATTRIBUTE_NAME2", "value":"Attribute_value2" }]’. You can use commas to separate multiple attributes [Mandatory]
     */
 	public function create_attribute( $data ) {
-		return $this->post( 'attribute/',json_encode( $data ) );
+		return $this->post( 'attribute/', json_encode( $data ) );
 	}
 
 	/*
@@ -513,7 +513,7 @@ class Mailin {
 	public function delete_attribute( $type, $data ) {
 		$type = $data['type'];
 		unset( $data['type'] );
-		return $this->post( 'attribute/' . $type,json_encode( $data ) );
+		return $this->post( 'attribute/' . $type, json_encode( $data ) );
 	}
 
 	/*
@@ -527,7 +527,7 @@ class Mailin {
         @options data {Array} blacklisted_sms: This is used to blacklist/ Unblacklist a user’s SMS number. Possible values – 0 & 1. blacklisted_sms = 1 means user’s SMS number has been blacklisted [Optional]
     */
 	public function create_update_user( $data ) {
-		return $this->post( 'user/createdituser',json_encode( $data ) );
+		return $this->post( 'user/createdituser', json_encode( $data ) );
 	}
 
 	/*
@@ -536,7 +536,7 @@ class Mailin {
         @options data {String} email: Email address of the already existing user in the SendinBlue contacts [Mandatory]
     */
 	public function get_user( $data ) {
-		return $this->get( 'user/' . $data['email'],'' );
+		return $this->get( 'user/' . $data['email'], '' );
 	}
 
 	/*
@@ -545,7 +545,7 @@ class Mailin {
         @options data {String} email: Email address of the already existing user in the SendinBlue contacts to be unlinked from all lists [Mandatory]
     */
 	public function delete_user( $data ) {
-		return $this->delete( 'user/' . $data['email'],'' );
+		return $this->delete( 'user/' . $data['email'], '' );
 	}
 
 	/*
@@ -559,7 +559,7 @@ class Mailin {
         @options data {Integer} list_parent: This is the existing folder id & can be used with name parameter to make newly created list’s desired parent [Optional]
     */
 	public function import_users( $data ) {
-		return $this->post( 'user/import',json_encode( $data ) );
+		return $this->post( 'user/import', json_encode( $data ) );
 	}
 
 	/*
@@ -570,7 +570,7 @@ class Mailin {
         @options data {String} notify_url: URL that will be called once the export process is finished [Optional]
     */
 	public function export_users( $data ) {
-		return $this->post( 'user/export',json_encode( $data ) );
+		return $this->post( 'user/export', json_encode( $data ) );
 	}
 
 	/*
@@ -580,7 +580,7 @@ class Mailin {
         @options data {Integer} page_limit: This should be a valid number between 1-50 [Mandatory]
     */
 	public function get_processes( $data ) {
-		return $this->get( 'process',json_encode( $data ) );
+		return $this->get( 'process', json_encode( $data ) );
 	}
 
 	/*
@@ -589,7 +589,7 @@ class Mailin {
         @options data {Integer} id: Id of process to get details [Mandatory]
     */
 	public function get_process( $data ) {
-		return $this->get( 'process/' . $data['id'],'' );
+		return $this->get( 'process/' . $data['id'], '' );
 	}
 
 	/*
@@ -598,7 +598,7 @@ class Mailin {
         @options data {String} is_plat: Flag to get webhooks. Possible values – 0 & 1. Example: to get Transactional webhooks, use $is_plat=0, to get Marketing webhooks, use $is_plat=1, & to get all webhooks, use $is_plat="" [Optional]
     */
 	public function get_webhooks( $data ) {
-			return $this->get( 'webhook',json_encode( $data ) );
+			return $this->get( 'webhook', json_encode( $data ) );
 	}
 
 	/*
@@ -607,7 +607,7 @@ class Mailin {
         @options data {Integer} id: Id of webhook to get details [Mandatory]
     */
 	public function get_webhook( $data ) {
-		return $this->get( 'webhook/' . $data['id'],'' );
+		return $this->get( 'webhook/' . $data['id'], '' );
 	}
 
 	/*
@@ -619,7 +619,7 @@ class Mailin {
         @options data {Integer} is_plat: Flag to create webhook type. Possible values – 0 (default) & 1. Example: to create Transactional webhooks, use $is_plat=0, & to create Marketing webhooks, use $is_plat=1 [Optional]
     */
 	public function create_webhook( $data ) {
-		return $this->post( 'webhook',json_encode( $data ) );
+		return $this->post( 'webhook', json_encode( $data ) );
 	}
 
 	/*
@@ -628,7 +628,7 @@ class Mailin {
         @options data {Integer} id: Id of webhook to be deleted [Mandatory]
     */
 	public function delete_webhook( $data ) {
-		return $this->delete( 'webhook/' . $data['id'],'' );
+		return $this->delete( 'webhook/' . $data['id'], '' );
 	}
 
 	/*
@@ -642,7 +642,7 @@ class Mailin {
 	public function update_webhook( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'webhook/' . $id,json_encode( $data ) );
+		return $this->put( 'webhook/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -651,7 +651,7 @@ class Mailin {
         @options data {String} option: Options to get senders. Possible options – IP-wise, & Domain-wise ( only for dedicated IP clients ). Example: to get senders with specific IP, use $option=’1.2.3.4′, to get senders with specific domain use, $option=’domain.com’, & to get all senders, use $option="" [Optional]
     */
 	public function get_senders( $data ) {
-		return $this->get( 'advanced',json_encode( $data ) );
+		return $this->get( 'advanced', json_encode( $data ) );
 	}
 
 	/*
@@ -662,7 +662,7 @@ class Mailin {
         @options data {Array} ip_domain: Pass pipe ( | ) separated Dedicated IP and its associated Domain. Example: "1.2.3.4|mydomain.com". You can use commas to separate multiple ip_domain’s [Mandatory: Only for Dedicated IP clients, for Shared IP clients, it should be kept blank]
     */
 	public function create_sender( $data ) {
-		return $this->post( 'advanced',json_encode( $data ) );
+		return $this->post( 'advanced', json_encode( $data ) );
 	}
 
 	/*
@@ -675,7 +675,7 @@ class Mailin {
 	public function update_sender( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'advanced/' . $id,json_encode( $data ) );
+		return $this->put( 'advanced/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -684,7 +684,7 @@ class Mailin {
         @options data {Integer} id: Id of sender to be deleted [Mandatory]
     */
 	public function delete_sender( $data ) {
-		return $this->delete( 'advanced/' . $data['id'],'' );
+		return $this->delete( 'advanced/' . $data['id'], '' );
 	}
 
 	/*
@@ -703,7 +703,7 @@ class Mailin {
         @options data {Array} inline_image: Pass your inline image/s filename & its base64 encoded chunk data as an associative array. Example: array("YourFileName.Extension"=>"Base64EncodedChunkData"). You can use commas to separate multiple inline images [Optional]
     */
 	public function send_email( $data ) {
-		return $this->post( 'email',json_encode( $data ) );
+		return $this->post( 'email', json_encode( $data ) );
 	}
 
 	/*
@@ -716,7 +716,7 @@ class Mailin {
         @options data {String} tag: The tag you will specify to retrieve detailed stats. It must be an existing tag that has statistics [Optional]
     */
 	public function get_statistics( $data ) {
-		return $this->post( 'statistics',json_encode( $data ) );
+		return $this->post( 'statistics', json_encode( $data ) );
 	}
 
 	/*
@@ -731,7 +731,7 @@ class Mailin {
         @options data {String} email: Email address to search report for [Optional]
     */
 	public function get_report( $data ) {
-		return $this->post( 'report',json_encode( $data ) );
+		return $this->post( 'report', json_encode( $data ) );
 	}
 
 	/*
@@ -742,7 +742,7 @@ class Mailin {
         @options data {String} email: Email address to delete its bounces [Optional]
     */
 	public function delete_bounces( $data ) {
-		return $this->post( 'bounces',json_encode( $data ) );
+		return $this->post( 'bounces', json_encode( $data ) );
 	}
 
 	/*
@@ -759,7 +759,7 @@ class Mailin {
 	public function send_transactional_template( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'template/' . $id,json_encode( $data ) );
+		return $this->put( 'template/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -778,7 +778,7 @@ class Mailin {
         @options data {Integer} attachment: Status of attachment. Possible values = 0 (default) & 1. attach = 0 means an attachment can’t be sent, & attach = 1 means an attachment can be sent, in the email [Optional]
     */
 	public function create_template( $data ) {
-		return $this->post( 'template',json_encode( $data ) );
+		return $this->post( 'template', json_encode( $data ) );
 	}
 
 	/*
@@ -800,7 +800,7 @@ class Mailin {
 	public function update_template( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'template/' . $id,json_encode( $data ) );
+		return $this->put( 'template/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -814,7 +814,7 @@ class Mailin {
         @options data {String} type: Type of message. Possible values – marketing (default) & transactional. You can use marketing for sending marketing SMS, & for sending transactional SMS, use transactional type [Optional]
     */
 	public function send_sms( $data ) {
-		return $this->post( 'sms',json_encode( $data ) );
+		return $this->post( 'sms', json_encode( $data ) );
 	}
 
 	/*
@@ -830,7 +830,7 @@ class Mailin {
         @options data {Integer} send_now: Flag to send campaign now. Possible values = 0 (default) & 1. send_now = 0 means campaign can’t be send now, & send_now = 1 means campaign ready to send now [Optional]
     */
 	public function create_sms_campaign( $data ) {
-		return $this->post( 'sms',json_encode( $data ) );
+		return $this->post( 'sms', json_encode( $data ) );
 	}
 
 	/*
@@ -849,7 +849,7 @@ class Mailin {
 	public function update_sms_campaign( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->put( 'sms/' . $id,json_encode( $data ) );
+		return $this->put( 'sms/' . $id, json_encode( $data ) );
 	}
 
 	/*
@@ -861,7 +861,7 @@ class Mailin {
 	public function send_bat_sms( $data ) {
 		$id = $data['id'];
 		unset( $data['id'] );
-		return $this->get( 'sms/' . $id,json_encode( $data ) );
+		return $this->get( 'sms/' . $id, json_encode( $data ) );
 	}
 
 }

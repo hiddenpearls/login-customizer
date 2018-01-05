@@ -1,11 +1,11 @@
 <?php
 function logincust_register_options_page() {
-	add_theme_page( __( 'Login Customizer','login-customizer' ), __( 'Login Customizer','login-customizer' ), 'manage_options', 'logincust_options', 'logincust_options_page' );
+	add_theme_page( __( 'Login Customizer', 'login-customizer' ), __( 'Login Customizer', 'login-customizer' ), 'manage_options', 'logincust_options', 'logincust_options_page' );
 }
 add_action( 'admin_menu', 'logincust_register_options_page' );
 
 function logincust_admin_style() {
-	wp_enqueue_style( 'admin_style', LOGINCUST_FREE_URL . '/css/admin.css',array(), LOGINCUST_VERSION, false );
+	wp_enqueue_style( 'admin_style', LOGINCUST_FREE_URL . '/css/admin.css', array(), LOGINCUST_VERSION, false );
 }
 add_action( 'admin_enqueue_scripts', 'logincust_admin_style' );
 
@@ -30,7 +30,7 @@ function logincust_options_page() {
 		require( LOGINCUST_FREE_PATH . 'mailin.php' );
 		$was_submited = get_option( 'mail_was_submited', false );
 		$user_info = get_userdata( 1 );
-		$mailin = new Mailin( 'https://api.sendinblue.com/v2.0','cHW5sxZnzE7mhaYb' );
+		$mailin = new Mailin( 'https://api.sendinblue.com/v2.0', 'cHW5sxZnzE7mhaYb' );
 		$data = array(
 			'email' => $_POST['logincust_mail'],
 			'attributes' => array('NAME' => $user_info->first_name, 'SURNAME' => $user_info->last_name),
@@ -59,7 +59,7 @@ function logincust_options_page() {
 
 
 function logincust_dashboard_widget() {
-	wp_add_dashboard_widget( 'logincust_subscribe_widget', __( 'Subscribe', 'login-customizer' ),'logincust_subscribe_widget' );
+	wp_add_dashboard_widget( 'logincust_subscribe_widget', __( 'Subscribe', 'login-customizer' ), 'logincust_subscribe_widget' );
 }
 add_action( 'wp_dashboard_setup', 'logincust_dashboard_widget' );
 
@@ -68,7 +68,7 @@ function logincust_subscribe_widget() {
 		require( LOGINCUST_FREE_PATH . 'mailin.php' );
 		$was_submited = get_option( 'logincust_mail_was_submited', false );
 		$user_info = get_userdata( 1 );
-		$mailin = new Mailin( 'https://api.sendinblue.com/v2.0','cHW5sxZnzE7mhaYb' );
+		$mailin = new Mailin( 'https://api.sendinblue.com/v2.0', 'cHW5sxZnzE7mhaYb' );
 		$data = array(
 			'email' => $_POST['logincust_mail'],
 			'attributes' => array('NAME' => $user_info->first_name, 'SURNAME' => $user_info->last_name),

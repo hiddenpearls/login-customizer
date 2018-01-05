@@ -10,6 +10,9 @@
 
     <rule ref="WordPress-Core">
         <exclude name="Generic.Files.LowercasedFilename" />
+        <exclude name="WordPress.Arrays.MultipleStatementAlignment" />
+        <exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found" />
+        <exclude name="Generic.Formatting.MultipleStatementAlignment" />
         <exclude name="Generic.NamingConventions.UpperCaseConstantName" />
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
         <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
