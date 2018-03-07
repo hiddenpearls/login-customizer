@@ -40,6 +40,14 @@ Please visit <a target="_blank" rel="nofollow" href="http://themeisle.com">this 
 2. Another Great Custom Login Page Example
 
 ## Changelog ##
+### 2.0 - 2018-03-09  ### 
+
+* Fixed issues with security plugins
+* Added Instant Refresh
+* Improved UX
+* Added more controls
+
+
 ### 1.2.1 - 2018-01-05  ###
 
 * Improves compatiblity with latest WordPress version.
