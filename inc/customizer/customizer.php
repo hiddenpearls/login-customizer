@@ -15,8 +15,8 @@ require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/alpha/alpha-control
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/radio-images/radio-images-control.php' );
 // Sanitizer Functions
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sanitizers.php' );
-// Enqueue CSS for Login page
-require_once( LOGINCUST_FREE_PATH . 'inc/customizer/custom-css.php' );
+// Enqueue CSS & JS for Login page
+require_once( LOGINCUST_FREE_PATH . 'inc/customizer/custom-code.php' );
 // Functions to change login page
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/functions.php' );
 

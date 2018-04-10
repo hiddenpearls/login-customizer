@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom CSS output to customize login page.
+ * Custom CSS & JS output to customize login page.
  */
 
 function logincust_render_styles() {
@@ -60,7 +60,7 @@ function logincust_render_styles() {
 	$custom_css .= '}';
 
 	// Login Page Form CSS
-	$custom_css .= '#login form#loginform {';
+	$custom_css .= '#login form#loginform, #login form#registerform, #login form#lostpasswordform {';
 		if ( ! empty( $options[ 'logincust_form_bg_image' ] ) ) {
 			$custom_css .= 'background-image: url(" '.$options[ 'logincust_form_bg_image' ].' ");';
 		}
@@ -112,7 +112,7 @@ function logincust_render_styles() {
 	}
 
 	// Login Page Fields CSS
-	$custom_css .= '#login form#loginform .input {';
+	$custom_css .= '#login form#loginform .input, #login form#registerform .input, #login form#lostpasswordform .input {';
 		if ( ! empty( $options[ 'logincust_field_width' ] ) ) {
 			$custom_css .= 'width: '.$options[ 'logincust_field_width' ].';';
 		}
@@ -146,7 +146,7 @@ function logincust_render_styles() {
 	$custom_css .= '}';
 
 	// Login Form Labels CSS
-	$custom_css .= '#login form#loginform label {';
+	$custom_css .= '#login form#loginform label, #login form#registerform label, #login form#lostpasswordform label {';
 		if ( ! empty( $options[ 'logincust_field_label' ] ) ) {
 			$custom_css .= 'color: '.$options[ 'logincust_field_label' ].';';
 		}
@@ -154,7 +154,7 @@ function logincust_render_styles() {
 			$custom_css .= 'font-size: '.$options[ 'logincust_field_label_font_size' ].';';
 		}
 	$custom_css .= '}';
-	$custom_css .= '#login form#loginform .forgetmenot label {';
+	$custom_css .= '#login form#loginform .forgetmenot label, #login form#registerform .forgetmenot label, #login form#lostpasswordform .forgetmenot label {';
 		if ( ! empty( $options[ 'logincust_field_label_font_size' ] ) ) {
 			$custom_css .= 'font-size: '. ( intval( $options[ 'logincust_field_label_font_size' ] ) - 2 ) .'px;';
 		}
@@ -244,3 +244,13 @@ function logincust_render_styles() {
 
 // Hook stylesheet to login page
 add_action( 'login_enqueue_scripts', 'logincust_render_styles' );
+
+
+function logincust_render_script() {
+	// Get plugin options array
+	$options = get_option( 'login_customizer_options' );
+	echo '<script>'. "\n" . $options['logincust_other_js'] . "\n" .'</script>' . "\n";
+}
+
+// Hook script to login page
+add_action( 'login_footer', 'logincust_render_script' );

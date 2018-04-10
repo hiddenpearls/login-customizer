@@ -136,7 +136,9 @@ jQuery( document ).ready( function( $ ) {
 });
 			
 var materialCSS = `/* Custom CSS for Material Template */
-#login form#loginform .input {
+#login form#loginform .input,
+#login form#registerform .input,
+#login form#lostpasswordform .input {
 	border-bottom: 1px solid #d2d2d2;
 }
 
