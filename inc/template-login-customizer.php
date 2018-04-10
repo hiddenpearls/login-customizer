@@ -106,6 +106,9 @@ $login_title = sprintf(
 	</div>
 	<?php
 		do_action( 'login_footer' );
+		$options = get_option( 'login_customizer_options' );
+		global $options;
+		echo '<script type="text/javascript">' .$options[ 'logincust_other_js' ]. '</script>';
 		wp_footer();
 	?>
 </body>

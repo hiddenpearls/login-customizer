@@ -13,7 +13,7 @@ $wp_customize->add_section(
 
 $wp_customize->add_setting(
 	'login_customizer_options[logincust_logo_show]', array(
-		'default' => true,
+		'default' => false,
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'absint',

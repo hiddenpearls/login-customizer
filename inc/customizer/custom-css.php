@@ -88,13 +88,54 @@ function logincust_render_styles() {
 		$custom_css .= '}';
 	}
 
+	// Rememer Me Link CSS
+	if ( ! empty( $options[ 'logincust_field_remember_me' ] ) && $options[ 'logincust_field_remember_me' ] === 1 ) {
+		$custom_css .= '#login form .forgetmenot {';
+			$custom_css .= 'display: none;';
+		$custom_css .= '}';
+	}
+
+	// Register Link CSS
+	if ( is_customize_preview() ) {
+		if ( ! empty( $options[ 'logincust_field_register_link' ] ) && $options[ 'logincust_field_register_link' ] === 1 ) {
+			$custom_css .= '#login #nav a:first-child {';
+				$custom_css .= 'display: none;';
+			$custom_css .= '}';
+		}
+	}
+
+	// Lost Password Link CSS
+	if ( ! empty( $options[ 'logincust_field_lost_password' ] ) && $options[ 'logincust_field_lost_password' ] === 1 ) {
+		$custom_css .= '#login #nav a:last-child {';
+			$custom_css .= 'display: none;';
+		$custom_css .= '}';
+	}
+
 	// Login Page Fields CSS
 	$custom_css .= '#login form#loginform .input {';
 		if ( ! empty( $options[ 'logincust_field_width' ] ) ) {
 			$custom_css .= 'width: '.$options[ 'logincust_field_width' ].';';
 		}
+		if ( ! empty( $options[ 'logincust_field_font_size' ] ) ) {
+			$custom_css .= 'font-size: '.$options[ 'logincust_field_font_size' ].';';
+		}
+		if ( ! empty( $options[ 'logincust_field_border_width' ] ) ) {
+			$custom_css .= 'border-width: '.$options[ 'logincust_field_border_width' ].';';
+		}
+		if ( ! empty( $options[ 'logincust_field_border_color' ] ) ) {
+			$custom_css .= 'border-color: '.$options[ 'logincust_field_border_color' ].';';
+		}
+		if ( ! empty( $options[ 'logincust_field_radius' ] ) ) {
+			$custom_css .= 'border-radius: '.$options[ 'logincust_field_radius' ].';';
+		}
+		if ( ! empty( $options[ 'logincust_field_box_shadow' ] ) && $options[ 'logincust_field_box_shadow' ] === 1 ) {
+			$custom_css .= 'box-shadow: unset;';
+		}
 		if ( ! empty( $options[ 'logincust_field_margin' ] ) ) {
 			$custom_css .= 'margin: '.$options[ 'logincust_field_margin' ].';';
+		}
+		if ( ! empty( $options[ 'logincust_field_padding' ] ) ) {
+			$custom_css .= 'padding: '.$options[ 'logincust_field_padding' ].';';
 		}
 		if ( ! empty( $options[ 'logincust_field_bg' ] ) ) {
 			$custom_css .= 'background-color: '.$options[ 'logincust_field_bg' ].';';
@@ -109,6 +150,14 @@ function logincust_render_styles() {
 		if ( ! empty( $options[ 'logincust_field_label' ] ) ) {
 			$custom_css .= 'color: '.$options[ 'logincust_field_label' ].';';
 		}
+		if ( ! empty( $options[ 'logincust_field_label_font_size' ] ) ) {
+			$custom_css .= 'font-size: '.$options[ 'logincust_field_label_font_size' ].';';
+		}
+	$custom_css .= '}';
+	$custom_css .= '#login form#loginform .forgetmenot label {';
+		if ( ! empty( $options[ 'logincust_field_label_font_size' ] ) ) {
+			$custom_css .= 'font-size: '. ( intval( $options[ 'logincust_field_label_font_size' ] ) - 2 ) .'px;';
+		}
 	$custom_css .= '}';
 
 	// Login Button CSS
@@ -116,6 +165,20 @@ function logincust_render_styles() {
 		$custom_css .= 'height: auto;';
 		if ( ! empty( $options[ 'logincust_button_bg' ] ) ) {
 			$custom_css .= 'background-color: '.$options[ 'logincust_button_bg' ].';';
+		}
+		if ( ! empty( $options[ 'logincust_button_font_size' ] ) ) {
+			$custom_css .= 'font-size: '.$options[ 'logincust_button_font_size' ].';';
+		}
+		if ( ! empty( $options[ 'logincust_button_height_width' ] ) && $options[ 'logincust_button_height_width' ] === 'custom' ) {
+			if ( ! empty( $options[ 'logincust_button_width_size' ] ) ) {
+				$custom_css .= 'width: '.$options[ 'logincust_button_width_size' ].';';
+			}
+			if ( ! empty( $options[ 'logincust_button_height_size' ] ) ) {
+				$custom_css .= 'height: '.$options[ 'logincust_button_height_size' ].';';
+			}
+		}
+		if ( ! empty( $options[ 'logincust_button_color' ] ) ) {
+			$custom_css .= 'color: '.$options[ 'logincust_button_color' ].';';
 		}
 		if ( ! empty( $options[ 'logincust_button_padding' ] ) ) {
 			$custom_css .= 'padding: '.$options[ 'logincust_button_padding' ].';';
@@ -132,8 +195,8 @@ function logincust_render_styles() {
 		if ( ! empty( $options[ 'logincust_button_shadow' ] ) && ! empty( $options[ 'logincust_button_shadow_spread' ] ) ) {
 			$custom_css .= 'box-shadow: 0px 1px '.$options[ 'logincust_button_shadow_spread' ].' '.$options[ 'logincust_button_shadow' ].';';
 		}
-		if ( ! empty( $options[ 'logincust_button_color' ] ) ) {
-			$custom_css .= 'color: '.$options[ 'logincust_button_color' ].';';
+		if ( ! empty( $options[ 'logincust_button_text_shadow' ] ) ) {
+			$custom_css .= 'text-shadow: 0 -1px 1px '.$options[ 'logincust_button_text_shadow' ].',1px 0 1px '.$options[ 'logincust_button_text_shadow' ].',0 1px 1px '.$options[ 'logincust_button_text_shadow' ].',-1px 0 1px '.$options[ 'logincust_button_text_shadow' ].';';
 		}
 	$custom_css .= '}';
 
@@ -148,8 +211,18 @@ function logincust_render_styles() {
 	$custom_css .= '}';
 
 	// Other Styling
+	if ( ! empty( $options[ 'logincust_field_back_blog' ] ) && $options[ 'logincust_field_back_blog' ] === 1 ) {
+		$custom_css .= '#login #backtoblog {';
+			$custom_css .= 'display: none;';
+		$custom_css .= '}';
+	}
+	if ( ! empty( $options[ 'logincust_other_font_size' ] ) ) {
+		$custom_css .= '.login #nav, .login #nav a, .login #backtoblog a {';
+			$custom_css .= 'font-size: '.$options[ 'logincust_other_font_size' ].';';
+		$custom_css .= '}';
+	}
 	if ( ! empty( $options[ 'logincust_other_color' ] ) ) {
-		$custom_css .= '.login #backtoblog a, .login #nav a {';	
+		$custom_css .= '.login #nav, .login #nav a, .login #backtoblog a {';
 			$custom_css .= 'color: '.$options[ 'logincust_other_color' ].';';
 		$custom_css .= '}';
 	}

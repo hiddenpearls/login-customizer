@@ -161,15 +161,94 @@ jQuery( document ).ready( function( $ ) {
 		});
 	});
 
+	wp.customize( 'login_customizer_options[logincust_field_remember_me]', function( value ) {
+		value.bind( function( newval ) {
+			if ( newval === true ) {
+				$( '#login form .forgetmenot' ).css( 'display', 'none' );
+			} else {
+				$( '#login form .forgetmenot' ).css( 'display', 'block' );
+			}
+		});
+	});
+
+	var navNode = document.querySelector( '#nav' );
+	wp.customize( 'login_customizer_options[logincust_field_register_link]', function( value ) {
+		value.bind( function( newval ) {
+			if ( newval === true ) {
+				navNode.children[0].style.display = 'none';
+			} else {
+				navNode.children[0].style.display = 'inline';
+			}
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_field_lost_password]', function( value ) {
+		value.bind( function( newval ) {
+			if ( newval === true ) {
+				if ( navNode.children[1] === undefined ) {
+					navNode.children[0].style.display = 'none';
+				} else {
+					navNode.children[1].style.display = 'none';
+				}
+			} else {
+				if ( navNode.children[1] === undefined ) {
+					navNode.children[0].style.display = 'inline';
+				} else {
+					navNode.children[1].style.display = 'inline';
+				}
+			}
+		});
+	});
+
 	wp.customize( 'login_customizer_options[logincust_field_width]', function( value ) {
 		value.bind( function( newval ) {
 			$( '#login form#loginform .input' ).css( 'width', newval );
 		});
 	});
 
+	wp.customize( 'login_customizer_options[logincust_field_font_size]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form#loginform .input' ).css( 'font-size', newval );
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_field_border_width]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form#loginform .input' ).css( 'border-width', newval );
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_field_border_color]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form#loginform .input' ).css( 'border-color', newval );
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_field_radius]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form#loginform .input' ).css( 'border-radius', newval );
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_field_box_shadow]', function( value ) {
+		value.bind( function( newval ) {
+			if ( newval === true ) {
+				$( '#login form#loginform .input' ).css( 'box-shadow', 'unset' );
+			} else {
+				$( '#login form#loginform .input' ).css( 'box-shadow', 'inset 0 1px 2px rgba(0,0,0,.07)' );
+			}
+		});
+	});
+
 	wp.customize( 'login_customizer_options[logincust_field_margin]', function( value ) {
 		value.bind( function( newval ) {
 			$( '#login form#loginform .input' ).css( 'margin', newval );
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_field_padding]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form#loginform .input' ).css( 'padding', newval );
 		});
 	});
 
@@ -191,6 +270,13 @@ jQuery( document ).ready( function( $ ) {
 		});
 	});
 
+	wp.customize( 'login_customizer_options[logincust_field_label_font_size]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form#loginform label' ).css( 'font-size', newval );
+			$( '#login form#loginform .forgetmenot label' ).css( 'font-size', ( parseInt( newval )  - 2 + 'px' ) );
+		});
+	});
+
 	var buttonbg = wp.customize( 'login_customizer_options[logincust_button_bg]' )._value;
 	wp.customize( 'login_customizer_options[logincust_button_bg]', function( value ) {
 		value.bind( function( newval ) {
@@ -206,6 +292,46 @@ jQuery( document ).ready( function( $ ) {
 			}, function(){
 				$( this ).css( 'background-color', buttonbg );
 			});
+		});
+	});
+
+	var customSize = wp.customize( 'login_customizer_options[logincust_button_height_width]' )._value;
+	var customWidth = wp.customize( 'login_customizer_options[logincust_button_width_size]' )._value;
+	var customHeight = wp.customize( 'login_customizer_options[logincust_button_height_size]' )._value;
+	wp.customize( 'login_customizer_options[logincust_button_height_width]', function( value ) {
+		value.bind( function( newval ) {
+			customSize = newval;
+			if ( customSize === 'auto' ) {
+				$( '#login form .submit .button' ).css( 'width', 'auto' );
+				$( '#login form .submit .button' ).css( 'height', 'auto' );
+			} else if ( customSize === 'custom' ) {
+				$( '#login form .submit .button' ).css( 'width', customWidth );
+				$( '#login form .submit .button' ).css( 'height', customHeight );
+			}
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_button_width_size]', function( value ) {
+		value.bind( function( newval ) {
+			if ( customSize === 'custom' ) {
+				customWidth = newval;
+				$( '#login form .submit .button' ).css( 'width', newval );
+			}
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_button_height_size]', function( value ) {
+		value.bind( function( newval ) {
+			if ( customSize === 'custom' ) {
+				customHeight = newval;
+				$( '#login form .submit .button' ).css( 'height', newval );
+			}
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_button_font_size]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form .submit .button' ).css( 'font-size', newval );
 		});
 	});
 
@@ -267,12 +393,36 @@ jQuery( document ).ready( function( $ ) {
 		});
 	});
 
+	wp.customize( 'login_customizer_options[logincust_button_text_shadow]', function( value ) {
+		value.bind( function( newval ) {
+			$( '#login form .submit .button' ).css( 'text-shadow', '0 -1px 1px ' + newval + ',1px 0 1px ' + newval + ',0 1px 1px ' + newval + ',-1px 0 1px ' + newval );
+		});
+	});
+	wp.customize( 'login_customizer_options[logincust_field_back_blog]', function( value ) {
+		value.bind( function( newval ) {
+			if ( newval === true ) {
+				$( '.login #backtoblog' ).css( 'display', 'none' );
+			} else {
+				$( '.login #backtoblog' ).css( 'display', 'block' );
+			}
+		});
+	});
+
+	wp.customize( 'login_customizer_options[logincust_other_font_size]', function( value ) {
+		value.bind( function( newval ) {
+			$( '.login #nav' ).css( 'font-size', newval );
+			$( '.login #nav a' ).css( 'font-size', newval );
+			$( '.login #backtoblog a' ).css( 'font-size', newval );
+		});
+	});
+
 	var othercolor = wp.customize( 'login_customizer_options[logincust_other_color]' )._value;
 	wp.customize( 'login_customizer_options[logincust_other_color]', function( value ) {
 		value.bind( function( newval ) {
 			othercolor = newval;
-			$( '.login #backtoblog a' ).css( 'color', newval );
+			$( '.login #nav' ).css( 'color', newval );
 			$( '.login #nav a' ).css( 'color', newval );
+			$( '.login #backtoblog a' ).css( 'color', newval );
 		});
 	});
 

@@ -11,6 +11,8 @@ require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/toggle/toggle-contr
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/padding/padding-control.php' );
 // Alpha Color Control
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/alpha/alpha-control.php' );
+// Radio Images Control
+require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/radio-images/radio-images-control.php' );
 // Sanitizer Functions
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sanitizers.php' );
 // Enqueue CSS for Login page
@@ -33,6 +35,9 @@ function logincust_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Section #0: Templates
+	require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sections/section-templates.php' );
+
 	// Section #1: Background
 	require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sections/section-background.php' );
 	
@@ -51,8 +56,8 @@ function logincust_customize_register( $wp_customize ) {
 	// Section #7: Other
 	require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sections/section-other.php' );
 
-	// Section #8: Custom CSS
-	require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sections/section-css.php' );
+	// Section #8: Custom CSS & JS
+	require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sections/section-code.php' );
 
 }
 add_action( 'customize_register', 'logincust_customize_register' );
@@ -69,6 +74,7 @@ function logincust_customizer_script() {
 
 	$localize = array(
 		'page' => get_permalink( $options[ 'page' ] ),
+		'url' => LOGINCUST_FREE_URL,
 	);
 
 	// Localize Script
