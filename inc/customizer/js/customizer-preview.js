@@ -1,3 +1,5 @@
+/* global logincust_script */
+
 jQuery( document ).ready( function( $ ) {
 
 	/*

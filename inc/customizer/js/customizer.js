@@ -1,3 +1,5 @@
+/* global logincust_script */
+
 jQuery( document ).ready( function( $ ) {
 
 	$( '<li class="accordion-section control-section control-section-default control-subsection"><h4 class="accordion-section-title"><a href="https://wordpress.org/support/plugin/login-customizer/reviews/#new-post" target="_blank">Like our plugin? Leave a review here!</a></h4></li><li style="padding: 10px; text-align: center;">Made with ❤ by <a href="https://themeisle.com/" target="_blank">ThemeIsle</a></li>' ).appendTo( '#sub-accordion-panel-logincust_panel' );
@@ -49,7 +51,7 @@ jQuery( document ).ready( function( $ ) {
 
 				// Only send the previewer to the login designer page, if we're not already on it.
 				var current_url = wp.customize.previewer.previewUrl();
-				var current_url = current_url.includes( logincust_script.page );
+					current_url = current_url.includes( logincust_script.page );
 
 				if ( ! current_url ) {
 					wp.customize.previewer.send( 'logincust-url-switcher', { expanded: isExpanding } );
@@ -58,7 +60,6 @@ jQuery( document ).ready( function( $ ) {
 			} else {
 				// Head back to the home page, if we leave the Login Designer panel.
 				wp.customize.previewer.send( 'logincust-back-to-home', { home_url: wp.customize.settings.url.home } );
-				url = wp.customize.settings.url.home;
 			}
 		});
 	});
@@ -135,47 +136,9 @@ jQuery( document ).ready( function( $ ) {
 
 });
 			
-var materialCSS = `/* Custom CSS for Material Template */
-#login form#loginform .input,
-#login form#registerform .input,
-#login form#lostpasswordform .input {
-	border-bottom: 1px solid #d2d2d2;
-}
+var materialCSS = '/* Custom CSS for Material Template */\n#login form#loginform .input,\n#login form#registerform .input,\n#login form#lostpasswordform .input {\n\tborder-bottom: 1px solid #d2d2d2;\n}\n\n.bar {\n\tposition: relative;\n\tdisplay: block;\n\twidth: 100%;\n}\n\n.bar:before, .bar:after {\n\tcontent: "";\n\theight: 2px; \n\twidth: 0;\n\tbottom: 15px; \n\tposition: absolute;\n\tbackground: #e91e63; \n\ttransition: all 0.2s ease;\n}\n\n.bar:before { left: 50%; }\n\n.bar:after { right: 50%; }\n\ninput:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }';
 
-.bar {
-	position: relative;
-	display: block;
-	width: 100%;
-}
-
-.bar:before, .bar:after {
-	content: '';
-	height: 2px; 
-	width: 0;
-	bottom: 15px; 
-	position: absolute;
-	background: #e91e63; 
-	transition: all 0.2s ease;
-}
-
-.bar:before { left: 50%; }
-
-.bar:after { right: 50%; }
-
-input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }`;
-
-var materialJS = `// Custom JS for Material Template
-function insertAfter( newNode, referenceNode ) {
-    referenceNode.parentNode.insertBefore( newNode, referenceNode.nextSibling );
-}
-
-var inputFields = document.querySelectorAll( '.input' );
-
-inputFields.forEach( ( field ) => {
-	var bar = document.createElement('span');
-		bar.setAttribute( 'class', 'bar' );
-	insertAfter( bar, field );
-});`;
+var materialJS = '// Custom JS for Material Template\nfunction insertAfter( newNode, referenceNode ) {\n    referenceNode.parentNode.insertBefore( newNode, referenceNode.nextSibling );\n}\n\nvar inputFields = document.querySelectorAll( ".input" );\n\ninputFields.forEach( ( field ) => {\n\tvar bar = document.createElement("span");\n\t\tbar.setAttribute( "class", "bar" );\n\tinsertAfter( bar, field );\n});';
 
 var allOptions = [
 	'login_customizer_options[logincust_bg_color]',
@@ -292,7 +255,7 @@ var allValues = [
 ];
 
 function resetOptions( options, values ) {
-	options.forEach( ( option, i ) => {
+	options.forEach( function( option, i ) {
 		wp.customize( option, function( setting ) {
 			setting.set( values[i] );
 		});

@@ -1,14 +1,18 @@
+/* global Color */
+
 jQuery(document).ready(function($) {
 
 	Color.prototype.toString = function(remove_alpha) {
-		if (remove_alpha == 'no-alpha') {
+		if (remove_alpha === 'no-alpha') {
 			return this.toCSS('rgba', '1').replace(/\s+/g, '');
 		}
 		if (this._alpha < 1) {
 			return this.toCSS('rgba', this._alpha).replace(/\s+/g, '');
 		}
 		var hex = parseInt(this._color, 10).toString(16);
-		if (this.error) return '';
+		if (this.error) {
+			return '';
+		}
 		if (hex.length < 6) {
 			for (var i = 6 - hex.length - 1; i >= 0; i--) {
 				hex = '0' + hex;
@@ -22,17 +26,18 @@ jQuery(document).ready(function($) {
 			value = $control.val().replace(/\s+/g, '');
 		// Manage Palettes
 		var palette_input = $control.attr('data-palette');
-		if (palette_input == 'false' || palette_input == false) {
-			var palette = false;
-		} else if (palette_input == 'true' || palette_input == true) {
-			var palette = true;
+		var palette = '';
+		if (palette_input === '0') {
+			palette = false;
+		} else if (palette_input === '1') {
+			palette = true;
 		} else {
-			var palette = $control.attr('data-palette').split(",");
+			palette = $control.attr('data-palette').split(',');
 		}
 		$control.wpColorPicker({ // change some things with the color picker
-			clear: function(event, ui) {
+			// clear: function(event, ui) {
 				// TODO reset Alpha Slider to 100
-			},
+			// },
 			change: function(event, ui) {
 				// send ajax request to wp.customizer to enable Save & Publish button
 				var _new_value = $control.val();
@@ -50,11 +55,12 @@ jQuery(document).ready(function($) {
 		$('<div class="logincust-alpha-container"><div class="slider-alpha"></div><div class="transparency"></div></div>').appendTo($control.parents('.wp-picker-container'));
 		var $alpha_slider = $control.parents('.wp-picker-container:first').find('.slider-alpha');
 		// if in format RGBA - grab A channel value
+		var alpha_val = '';
 		if (value.match(/rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/)) {
-			var alpha_val = parseFloat(value.match(/rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/)[1]) * 100;
-			var alpha_val = parseInt(alpha_val);
+			alpha_val = parseFloat(value.match(/rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/)[1]) * 100;
+			alpha_val = parseInt(alpha_val);
 		} else {
-			var alpha_val = 100;
+			alpha_val = 100;
 		}
 		$alpha_slider.slider({
 			slide: function(event, ui) {
@@ -66,12 +72,12 @@ jQuery(document).ready(function($) {
 					obj.set(_new_value);
 				});
 			},
-			create: function(event, ui) {
+			create: function() {
 				var v = $(this).slider('value');
 				$(this).find('.ui-slider-handle').text(v);
 			},
 			value: alpha_val,
-			range: "max",
+			range: 'max',
 			step: 1,
 			min: 1,
 			max: 100
