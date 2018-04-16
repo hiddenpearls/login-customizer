@@ -3,8 +3,8 @@
 }
 
 .customize-control-logincust-padding .field-icon {
-	width: 20%;
 	display: inline-table;
+	width: 20%;
 }
 
 .customize-control-logincust-padding input[type=number] {
