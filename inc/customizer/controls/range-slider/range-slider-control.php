@@ -81,7 +81,7 @@ if ( ! empty( $this->description ) ) :
 							<input class="o2-range-slider-range" type="range" value="<?php echo intval( $this->value() ); ?>" <?php $this->input_attrs(); ?> />
 							<input class="o2-range-slider-value" type="number" value="<?php echo intval( $this->value() ); ?>" <?php $this->input_attrs(); ?> />
 							<?php if ( ! empty( $this->setting->default ) ) : ?>
-								<span class="o2-range-reset-slider" title="<?php _e( 'Reset', 'o2' ); ?>"><span class="dashicons dashicons-image-rotate"></span></span>
+								<span class="o2-range-reset-slider" title="<?php _e( 'Reset', 'login-customizer' ); ?>"><span class="dashicons dashicons-image-rotate"></span></span>
 							<?php endif; ?>
 						</div>
 					</div>
