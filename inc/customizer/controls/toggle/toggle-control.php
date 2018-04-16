@@ -42,7 +42,12 @@ if ( ! function_exists( 'o2_add_toggle_control' ) ) :
 						<?php if ( ! empty( $this->label ) ) : ?>
 							<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 						<?php endif; ?>
-						<input type="checkbox" class="o2-toggle-checkbox" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo intval( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
+						<input type="checkbox" class="o2-toggle-checkbox" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo intval( $this->value() ); ?>" 
+																							<?php
+																							$this->link();
+																							checked( $this->value() );
+?>
+ />
 						<button type="button" class="o2-btn-toggle" for="<?php echo esc_attr( $this->id ); ?>">
 							<div class="handle"></div>
 						</button>
@@ -51,7 +56,8 @@ if ( ! function_exists( 'o2_add_toggle_control' ) ) :
 						<?php endif; ?>
 					</div>
 				</label>
-			<?php }
+			<?php
+			}
 
 		}
 	}

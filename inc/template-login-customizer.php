@@ -24,7 +24,8 @@ if ( ! is_customize_preview() ) {
 <head>
 <?php
 $login_title = sprintf(
-	__( '%1$s &lsaquo; %2$s &#8212; WordPress', 'login-customizer' ), __( 'Log In', 'login-customizer'),  get_bloginfo( 'name', 'display' ) );
+	__( '%1$s &lsaquo; %2$s &#8212; WordPress', 'login-customizer' ), __( 'Log In', 'login-customizer' ), get_bloginfo( 'name', 'display' )
+);
 ?>
 <title><?php echo esc_attr( $login_title ); ?></title>
 <?php
@@ -40,28 +41,28 @@ $login_title = sprintf(
 
 	$login_link_separator = apply_filters( 'login_link_separator', ' | ' );
 
-	if ( is_multisite() ) {
-		$login_header_url   = network_home_url();
-		$login_header_title = get_network()->site_name;
-	} else {
-		$login_header_url   = __( 'https://wordpress.org/', 'login-customizer' );
-		$login_header_title = __( 'Powered by WordPress', 'login-customizer' );
-	}
+if ( is_multisite() ) {
+	$login_header_url   = network_home_url();
+	$login_header_title = get_network()->site_name;
+} else {
+	$login_header_url   = __( 'https://wordpress.org/', 'login-customizer' );
+	$login_header_title = __( 'Powered by WordPress', 'login-customizer' );
+}
 
 	$login_header_url = apply_filters( 'login_headerurl', $login_header_url );
 
 	$login_header_title = apply_filters( 'login_headertitle', $login_header_title );
 
-	if ( is_multisite() ) {
-		$login_header_text = get_bloginfo( 'name', 'display' );
-	} else {
-		$login_header_text = $login_header_title;
-	}
+if ( is_multisite() ) {
+	$login_header_text = get_bloginfo( 'name', 'display' );
+} else {
+	$login_header_text = $login_header_title;
+}
 
 	$classes = array( 'login-action-' . $action, 'wp-core-ui' );
-	if ( is_rtl() ) {
-		$classes[] = 'rtl';
-	}
+if ( is_rtl() ) {
+	$classes[] = 'rtl';
+}
 
 	$classes = apply_filters( 'login_body_class', $classes, $action );
 	?>
@@ -86,11 +87,11 @@ $login_title = sprintf(
 		</form>
 		<p id="nav">
 			<?php
-				if ( get_option( 'users_can_register' ) ) :
-					$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Register', 'login-customizer' ) );
-					/** This filter is documented in wp-includes/general-template.php */
-					echo apply_filters( 'register', $registration_url );
-					echo esc_html( $login_link_separator );
+			if ( get_option( 'users_can_register' ) ) :
+				$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Register', 'login-customizer' ) );
+				/** This filter is documented in wp-includes/general-template.php */
+				echo apply_filters( 'register', $registration_url );
+				echo esc_html( $login_link_separator );
 				endif;
 			?>
 			<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'login-customizer' ); ?></a>
@@ -108,7 +109,7 @@ $login_title = sprintf(
 		do_action( 'login_footer' );
 		$options = get_option( 'login_customizer_options' );
 		global $options;
-		echo '<script type="text/javascript">' .$options[ 'logincust_other_js' ]. '</script>';
+		echo '<script type="text/javascript">' . $options['logincust_other_js'] . '</script>';
 		wp_footer();
 	?>
 </body>

@@ -24,7 +24,7 @@ if ( ! function_exists( 'logincust_alpha_control' ) ) :
 
 	function logincust_alpha_control( $wp_customize ) {
 		class LoginCust_Customize_Alpha_Color_Control extends WP_Customize_Control {
-		
+
 			public $type = 'alphacolor';
 			public $palette = true;
 			public $default = array();
@@ -39,17 +39,19 @@ if ( ! function_exists( 'logincust_alpha_control' ) ) :
 			}
 
 			public function enqueue() {
-				wp_enqueue_script( 'logincust-alpha', LOGINCUST_FREE_URL . 'inc/customizer/controls/alpha/assets/js/alpha-control.js', array( 'jquery' ), NULL, true );
+				wp_enqueue_script( 'logincust-alpha', LOGINCUST_FREE_URL . 'inc/customizer/controls/alpha/assets/js/alpha-control.js', array( 'jquery' ), null, true );
 				wp_enqueue_style( 'logincust-alpha', LOGINCUST_FREE_URL . 'inc/customizer/controls/alpha/assets/css/alpha-control.css' );
 			}
 
-			public function render_content() { ?>
+			public function render_content() {
+	?>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<label>
 					<input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->setting->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="logincust-color-control" <?php $this->link(); ?>  />
 				</label>
-			<?php }
+			<?php
+			}
 		}
 	}
 	add_action( 'customize_register', 'logincust_alpha_control' );

@@ -70,7 +70,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new O2_Customizer_Toggle_Control(
 		$wp_customize, 'login_customizer_options[logincust_field_back_blog]', array(
-			'label' => __( 'Disable "Back to ' .get_bloginfo( 'name' ). '"?', 'login-customizer' ),
+			'label' => __( 'Disable "Back to Website"?', 'login-customizer' ),
 			'section' => 'logincust_other_section',
 			'priority' => 15,
 			'settings' => 'login_customizer_options[logincust_field_back_blog]',

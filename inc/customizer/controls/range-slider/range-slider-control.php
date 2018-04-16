@@ -70,8 +70,10 @@ if ( ! function_exists( 'o2_add_range_slider_control' ) ) :
 							</div>
 						<?php endif; ?>
 						</span>
-					<?php endif;
-					if ( ! empty( $this->description ) ) : ?>
+					<?php
+					endif;
+if ( ! empty( $this->description ) ) :
+					?>
 						<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 					<?php endif; ?>
 					<div id="<?php echo esc_attr( $this->id ); ?>">
@@ -80,11 +82,12 @@ if ( ! function_exists( 'o2_add_range_slider_control' ) ) :
 							<input class="o2-range-slider-value" type="number" value="<?php echo intval( $this->value() ); ?>" <?php $this->input_attrs(); ?> />
 							<?php if ( ! empty( $this->setting->default ) ) : ?>
 								<span class="o2-range-reset-slider" title="<?php _e( 'Reset', 'o2' ); ?>"><span class="dashicons dashicons-image-rotate"></span></span>
-							<?php endif;?>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
-			<?php }
+			<?php
+			}
 
 		}
 	}

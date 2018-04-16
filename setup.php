@@ -9,7 +9,7 @@ include( LOGINCUST_FREE_PATH . 'inc/initial-setup.php' );
  */
 if ( get_option( 'login_customizer_settings' ) ) {
 	$db_version = get_option( 'login_customizer_settings', array() );
-	$db_version = $db_version[ 'version' ];
+	$db_version = $db_version['version'];
 	if ( isset( $db_version ) ) {
 		// Compare version of plugin with previously saved version
 		if ( version_compare( $db_version, LOGINCUST_VERSION, '<' ) ) {
@@ -49,7 +49,7 @@ if ( get_option( 'login_customizer_settings' ) ) {
 	);
 
 	// if old options exist, update to new system
-	foreach( $options as $key ) {
+	foreach ( $options as $key ) {
 		if ( $existing = get_option( $key ) ) {
 			$options[ $key ] = $existing;
 			delete_option( $key );

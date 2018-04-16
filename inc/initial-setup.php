@@ -10,7 +10,7 @@ class LoginCustomizerSetup {
 	private static $instance;
 
 	/**
-	 * Returns an instance of this class. 
+	 * Returns an instance of this class.
 	 */
 	public static function get_instance() {
 		if ( null == self::$instance ) {
@@ -55,7 +55,7 @@ class LoginCustomizerSetup {
 
 		// Get page template from post meta
 		$page_template = get_post_meta( $page_id, '_wp_page_template', true );
-	
+
 		// Check if using Login Customizer's page template
 		if ( $page_template != 'template-login-customizer.php' ) {
 			update_post_meta( $page_id, '_wp_page_template', 'template-login-customizer.php' );
@@ -113,8 +113,8 @@ class LoginCustomizerSetup {
 		// Update plugin option with page ID and plugin version
 		if ( get_option( 'login_customizer_settings' ) !== false ) {
 			$options = get_option( 'login_customizer_settings', array() );
-			$options[ 'page' ] = $page_id;
-			$options[ 'version' ] = LOGINCUST_VERSION;
+			$options['page'] = $page_id;
+			$options['version'] = LOGINCUST_VERSION;
 			update_option( 'login_customizer_settings', $options );
 		}
 

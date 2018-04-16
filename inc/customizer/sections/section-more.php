@@ -13,14 +13,14 @@ $wp_customize->add_section(
 
 $wp_customize->add_setting(
 	'latte_required_info', array(
-		'sanitize_callback' => 'esc_html'
+		'sanitize_callback' => 'esc_html',
 	)
 );
 
 $wp_customize->add_control(
 	new Logincust_Cool_Stuff_Control(
 		$wp_customize, 'latte_required_info', array(
-			'section' => 'logincust_more_section'
+			'section' => 'logincust_more_section',
 		)
 	)
 );

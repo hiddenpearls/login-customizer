@@ -202,7 +202,7 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new LoginCust_Padding_Control(
-			$wp_customize, 'login_customizer_options[logincust_field_margin]', array(
+		$wp_customize, 'login_customizer_options[logincust_field_margin]', array(
 			'label' => __( 'Margin', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 35,
@@ -223,7 +223,7 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new LoginCust_Padding_Control(
-			$wp_customize, 'login_customizer_options[logincust_field_padding]', array(
+		$wp_customize, 'login_customizer_options[logincust_field_padding]', array(
 			'label' => __( 'Padding', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 40,

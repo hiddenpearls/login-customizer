@@ -29,7 +29,7 @@ require_once( LOGINCUST_FREE_PATH . 'inc/customizer/customizer.php' );
 
 function login_customizer_register_sdk( $products ) {
 	$products[] = __FILE__;
-	
+
 	return $products;
 }
 
@@ -41,7 +41,7 @@ add_filter( 'themeisle_sdk_products', 'login_customizer_register_sdk', 10, 1 );
 function logincust_admin_link() {
 
 	// Get global submenu
-    global $submenu;
+	global $submenu;
 
 	// Generate the redirect url.
 	$options = get_option( 'login_customizer_settings', array() );
@@ -49,13 +49,13 @@ function logincust_admin_link() {
 	$url = add_query_arg(
 		array(
 			'autofocus[panel]' => 'logincust_panel',
-			'url' => rawurlencode( get_permalink( $options[ 'page' ] ) ),
+			'url' => rawurlencode( get_permalink( $options['page'] ) ),
 		),
 		admin_url( 'customize.php' )
 	);
 
 	// Add Login Customizer as a menu item
-	$submenu[ 'themes.php' ][] = array( 'Login Customizer', 'manage_options', $url, 'login-customizer' );
+	$submenu['themes.php'][] = array( 'Login Customizer', 'manage_options', $url, 'login-customizer' );
 
 }
 
