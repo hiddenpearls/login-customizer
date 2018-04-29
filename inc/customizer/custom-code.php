@@ -249,7 +249,9 @@ add_action( 'login_enqueue_scripts', 'logincust_render_styles' );
 function logincust_render_script() {
 	// Get plugin options array
 	$options = get_option( 'login_customizer_options' );
-	echo '<script>' . "\n" . $options['logincust_other_js'] . "\n" . '</script>' . "\n";
+	if ( ! empty( $options['logincust_other_js'] ) ) {
+		echo '<script>' . "\n" . $options['logincust_other_js'] . "\n" . '</script>' . "\n";
+	}
 }
 
 // Hook script to login page
