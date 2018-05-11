@@ -51,7 +51,7 @@ function logincust_render_styles() {
 			$custom_css .= 'height: ' . $options['logincust_logo_height'] . ';';
 		}
 		if ( ! empty( $options['logincust_logo_width'] ) || ! empty( $options['logincust_logo_height'] ) ) {
-			$custom_css .= 'background-size: ' . $options['logincust_logo_height'] . ' ' . $options['logincust_logo_height'] . ';';
+			$custom_css .= 'background-size: ' . $options['logincust_logo_width'] . ' ' . $options['logincust_logo_height'] . ';';
 		}
 		if ( ! empty( $options['logincust_logo_padding'] ) ) {
 			$custom_css .= 'padding-bottom: ' . $options['logincust_logo_padding'] . ';';
