@@ -36,7 +36,7 @@ if ( ! function_exists( 'o2_add_toggle_control' ) ) :
 			}
 
 			public function render_content() {
-			?>
+				?>
 				<label>
 					<div id="<?php echo esc_attr( $this->id ); ?>" class="o2-toggle">
 						<?php if ( ! empty( $this->label ) ) : ?>
@@ -46,7 +46,7 @@ if ( ! function_exists( 'o2_add_toggle_control' ) ) :
 																							<?php
 																							$this->link();
 																							checked( $this->value() );
-?>
+																							?>
  />
 						<button type="button" class="o2-btn-toggle" for="<?php echo esc_attr( $this->id ); ?>">
 							<div class="handle"></div>
@@ -56,7 +56,7 @@ if ( ! function_exists( 'o2_add_toggle_control' ) ) :
 						<?php endif; ?>
 					</div>
 				</label>
-			<?php
+				<?php
 			}
 
 		}

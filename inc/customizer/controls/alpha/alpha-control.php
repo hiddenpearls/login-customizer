@@ -44,13 +44,13 @@ if ( ! function_exists( 'logincust_alpha_control' ) ) :
 			}
 
 			public function render_content() {
-	?>
+				?>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<label>
 					<input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->setting->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="logincust-color-control" <?php $this->link(); ?>  />
 				</label>
-			<?php
+				<?php
 			}
 		}
 	}

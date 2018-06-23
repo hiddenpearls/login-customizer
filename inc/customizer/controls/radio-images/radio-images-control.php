@@ -35,7 +35,7 @@ if ( ! function_exists( 'o2_add_radio_images_control' ) ) :
 			}
 
 			public function render_content() {
-			?>
+				?>
 				<label>
 					<?php if ( ! empty( $this->label ) ) : ?>
 						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
@@ -54,7 +54,7 @@ if ( ! function_exists( 'o2_add_radio_images_control' ) ) :
 					<?php endforeach; ?>
 					</div>
 				</label>
-			<?php
+				<?php
 			}
 
 		}

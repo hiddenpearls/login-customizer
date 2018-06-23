@@ -65,7 +65,7 @@ if ( is_rtl() ) {
 }
 
 	$classes = apply_filters( 'login_body_class', $classes, $action );
-	?>
+?>
 <body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 <?php do_action( 'login_header' ); ?>
 	<div id="login">

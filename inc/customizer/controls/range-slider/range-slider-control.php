@@ -57,7 +57,7 @@ if ( ! function_exists( 'o2_add_range_slider_control' ) ) :
 			}
 
 			public function render_content() {
-			?>
+				?>
 				<div>
 					<?php if ( ! empty( $this->label ) ) : ?>
 						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?>
@@ -70,10 +70,10 @@ if ( ! function_exists( 'o2_add_range_slider_control' ) ) :
 							</div>
 						<?php endif; ?>
 						</span>
-					<?php
+						<?php
 					endif;
 if ( ! empty( $this->description ) ) :
-					?>
+	?>
 						<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 					<?php endif; ?>
 					<div id="<?php echo esc_attr( $this->id ); ?>">
@@ -86,7 +86,7 @@ if ( ! empty( $this->description ) ) :
 						</div>
 					</div>
 				</div>
-			<?php
+				<?php
 			}
 
 		}

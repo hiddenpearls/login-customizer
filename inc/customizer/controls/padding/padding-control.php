@@ -13,7 +13,7 @@ if ( ! function_exists( 'logincust_padding_control' ) ) :
 			}
 
 			public function render_content() {
-			?>
+				?>
 				<label>
 					<div id="<?php echo esc_attr( $this->id ); ?>">
 						<?php if ( ! empty( $this->label ) ) : ?>
@@ -37,7 +37,7 @@ if ( ! function_exists( 'logincust_padding_control' ) ) :
 						<input type="text" value="<?php echo esc_html( $this->value() ); ?>" <?php $this->link(); ?> />
 					</div>
 				</label>
-			<?php
+				<?php
 			}
 
 		}

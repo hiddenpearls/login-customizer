@@ -258,6 +258,12 @@ function resetOptions( options, values ) {
 	options.forEach( function( option, i ) {
 		wp.customize( option, function( setting ) {
 			setting.set( values[i] );
+
+            // hack to reset color.
+            if( option.indexOf( 'color' ) !== -1 ){
+                var li = 'customize-control-' + option.replace( /\[/g, '-' ).replace( /\]/g, '' );
+                jQuery( '#' + li + ' button.wp-color-result' ).css( 'background-color', values[i] );
+            }
 		});
 	});
 }
