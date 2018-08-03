@@ -20,7 +20,9 @@ require_once( LOGINCUST_FREE_PATH . 'inc/customizer/custom-code.php' );
 // Functions to change login page
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/functions.php' );
 // Sendinblue Class
-require_once( LOGINCUST_FREE_PATH . 'inc/mailin.php' );
+if ( ! class_exists( 'Mailin' ) ) {
+	require_once( LOGINCUST_FREE_PATH . 'inc/mailin.php' );
+}
 // Cool Stuff Control
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/cool-stuff/cool-stuff-control.php' );
 
