@@ -1,6 +1,6 @@
 {
   "name": "login-customizer",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codeinwp/login-customizer.git"
@@ -21,7 +21,7 @@
     "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.3",
     "grunt-plugin-fleet": "codeinwp/grunt-plugin-fleet",
     "load-project-config": "~0.2.0"
   }
