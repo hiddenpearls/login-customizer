@@ -42,6 +42,13 @@ Please visit <a target="_blank" rel="nofollow" href="http://themeisle.com">this 
 2. Another Great Custom Login Page Example
 
 == Changelog ==
+= 2.0.0 - 2018-08-06  = 
+
+* Added Template Feature
+* Added Instant Refresh for Controls
+* Fixed issue with Security plugins and Multisite
+
+
 = 2.0 - 2018-03-09  = 
 
 * Fixed issues with security plugins

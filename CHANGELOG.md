@@ -1,4 +1,10 @@
 
+ ### v2.0.0 - 2018-08-06 
+ **Changes:** 
+ * Added Template Feature
+* Added Instant Refresh for Controls
+* Fixed issue with Security plugins and Multisite
+ 
  ### v1.2.1 - 2018-01-05 
  **Changes:** 
  * Improves compatiblity with latest WordPress version.
