@@ -2,7 +2,7 @@
 Stable tag: trunk
 Requires at least: 4.0
 Tested up to: 4.9
-Contributors: codeinwp, hardeepasrani,marius_codeinwp
+Contributors: hardeepasrani,marius_codeinwp
 Author URI: https://themeisle.com
 Tags: login, customizer, logo, login logo, login customizer, login page,admin, branding, customization, custom login, error, login error, custom login pro
 License: GPLv2 or later

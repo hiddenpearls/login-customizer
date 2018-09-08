@@ -2,7 +2,7 @@
 **Stable tag:** trunk  
 **Requires at least:** 4.0  
 **Tested up to:** 4.9  
-**Contributors:** [hardeepasrani](https://profiles.wordpress.org/hardeepasrani)
+**Contributors:** [hardeepasrani](https://profiles.wordpress.org/hardeepasrani), [marius_codeinwp](https://profiles.wordpress.org/marius_codeinwp)
 **Author URI:** http://www.hardeepasrani.com  
 **Tags:** login, customizer, logo, login logo, login customizer, login page,admin, branding, customization, custom login, error, login error, custom login pro  
 **License:** GPLv2 or later  
