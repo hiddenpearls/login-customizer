@@ -18,7 +18,7 @@
  * Requires License:    no
  */
 
-define( 'LOGINCUST_VERSION', '2.0.0' );
+define( 'LOGINCUST_VERSION', '2.0.1' );
 define( 'LOGINCUST_FREE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LOGINCUST_FREE_URL', plugin_dir_url( __FILE__ ) );
 
