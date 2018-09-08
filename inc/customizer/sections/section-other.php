@@ -4,7 +4,8 @@
  */
 
 $wp_customize->add_section(
-	'logincust_other_section', array(
+	'logincust_other_section',
+	array(
 		'priority' => 35,
 		'title' => __( 'Other', 'login-customizer' ),
 		'panel'  => 'logincust_panel',
@@ -14,7 +15,8 @@ $wp_customize->add_section(
 if ( get_option( 'users_can_register' ) ) {
 
 	$wp_customize->add_setting(
-		'login_customizer_options[logincust_field_register_link]', array(
+		'login_customizer_options[logincust_field_register_link]',
+		array(
 			'default' => false,
 			'type' => 'option',
 			'capability' => 'edit_theme_options',
@@ -25,7 +27,9 @@ if ( get_option( 'users_can_register' ) ) {
 
 	$wp_customize->add_control(
 		new O2_Customizer_Toggle_Control(
-			$wp_customize, 'login_customizer_options[logincust_field_register_link]', array(
+			$wp_customize,
+			'login_customizer_options[logincust_field_register_link]',
+			array(
 				'label' => __( 'Disable Register Link?', 'login-customizer' ),
 				'section' => 'logincust_other_section',
 				'priority' => 5,
@@ -37,7 +41,8 @@ if ( get_option( 'users_can_register' ) ) {
 }
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_lost_password]', array(
+	'login_customizer_options[logincust_field_lost_password]',
+	array(
 		'default' => false,
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -48,7 +53,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Toggle_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_lost_password]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_lost_password]',
+		array(
 			'label' => __( 'Disable Lost Password?', 'login-customizer' ),
 			'section' => 'logincust_other_section',
 			'priority' => 10,
@@ -58,7 +65,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_back_blog]', array(
+	'login_customizer_options[logincust_field_back_blog]',
+	array(
 		'default' => false,
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -69,7 +77,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Toggle_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_back_blog]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_back_blog]',
+		array(
 			'label' => __( 'Disable "Back to Website"?', 'login-customizer' ),
 			'section' => 'logincust_other_section',
 			'priority' => 15,
@@ -79,7 +89,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_other_font_size]', array(
+	'login_customizer_options[logincust_other_font_size]',
+	array(
 		'default' => '13px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -90,7 +101,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_other_font_size]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_other_font_size]',
+		array(
 			'label' => __( 'Font Size', 'login-customizer' ),
 			'section' => 'logincust_other_section',
 			'priority' => 15,
@@ -108,7 +121,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_other_color]', array(
+	'login_customizer_options[logincust_other_color]',
+	array(
 		'default' => '#999',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -119,7 +133,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_other_color]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_other_color]',
+		array(
 			'label' => __( 'Text Color', 'login-customizer' ),
 			'section' => 'logincust_other_section',
 			'priority' => 20,
@@ -129,7 +145,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_other_color_hover]', array(
+	'login_customizer_options[logincust_other_color_hover]',
+	array(
 		'default' => '#2EA2CC',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -140,7 +157,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_other_color_hover]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_other_color_hover]',
+		array(
 			'label' => __( 'Text Color (Hover)', 'login-customizer' ),
 			'section' => 'logincust_other_section',
 			'priority' => 25,

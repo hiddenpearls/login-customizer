@@ -4,7 +4,8 @@
  */
 
 $wp_customize->add_section(
-	'logincust_field_section', array(
+	'logincust_field_section',
+	array(
 		'priority' => 25,
 		'title' => __( 'Fields', 'login-customizer' ),
 		'panel'  => 'logincust_panel',
@@ -12,7 +13,8 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_remember_me]', array(
+	'login_customizer_options[logincust_field_remember_me]',
+	array(
 		'default' => false,
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -23,7 +25,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Toggle_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_remember_me]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_remember_me]',
+		array(
 			'label' => __( 'Disable Remember Me?', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 5,
@@ -33,7 +37,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_width]', array(
+	'login_customizer_options[logincust_field_width]',
+	array(
 		'default' => '100%',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -44,7 +49,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_width]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_width]',
+		array(
 			'label' => __( 'Width', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 10,
@@ -62,7 +69,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_font_size]', array(
+	'login_customizer_options[logincust_field_font_size]',
+	array(
 		'default' => '24px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -73,7 +81,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_font_size]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_font_size]',
+		array(
 			'label' => __( 'Font Size', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 15,
@@ -91,7 +101,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_border_width]', array(
+	'login_customizer_options[logincust_field_border_width]',
+	array(
 		'default' => '1px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -102,7 +113,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_border_width]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_border_width]',
+		array(
 			'label' => __( 'Border Width', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 20,
@@ -120,7 +133,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_border_color]', array(
+	'login_customizer_options[logincust_field_border_color]',
+	array(
 		'default' => '#DDD',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -131,7 +145,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_border_color]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_border_color]',
+		array(
 			'label' => __( 'Border Color', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 25,
@@ -141,7 +157,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_radius]', array(
+	'login_customizer_options[logincust_field_radius]',
+	array(
 		'default' => '0px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -152,7 +169,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_radius]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_radius]',
+		array(
 			'label' => __( 'Radius', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 30,
@@ -170,7 +189,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_box_shadow]', array(
+	'login_customizer_options[logincust_field_box_shadow]',
+	array(
 		'default' => false,
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -181,7 +201,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Toggle_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_box_shadow]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_box_shadow]',
+		array(
 			'label' => __( 'Disable Box Shadow?', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 35,
@@ -191,7 +213,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_margin]', array(
+	'login_customizer_options[logincust_field_margin]',
+	array(
 		'default' => '2px 6px 16px 0px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -202,7 +225,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new LoginCust_Padding_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_margin]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_margin]',
+		array(
 			'label' => __( 'Margin', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 35,
@@ -212,7 +237,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_padding]', array(
+	'login_customizer_options[logincust_field_padding]',
+	array(
 		'default' => '3px 3px 3px 3px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -223,7 +249,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new LoginCust_Padding_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_padding]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_padding]',
+		array(
 			'label' => __( 'Padding', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 40,
@@ -233,7 +261,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_bg]', array(
+	'login_customizer_options[logincust_field_bg]',
+	array(
 		'default' => '#FFF',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -244,7 +273,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_bg]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_bg]',
+		array(
 			'label' => __( 'Background', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 45,
@@ -254,7 +285,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_color]', array(
+	'login_customizer_options[logincust_field_color]',
+	array(
 		'default' => '#333',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -265,7 +297,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_color]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_color]',
+		array(
 			'label' => __( 'Text Color', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 50,
@@ -275,7 +309,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_label]', array(
+	'login_customizer_options[logincust_field_label]',
+	array(
 		'default' => '#777',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -286,7 +321,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_label]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_label]',
+		array(
 			'label' => __( 'Label Color', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 55,
@@ -296,7 +333,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_field_label_font_size]', array(
+	'login_customizer_options[logincust_field_label_font_size]',
+	array(
 		'default' => '14px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -307,7 +345,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_field_label_font_size]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_field_label_font_size]',
+		array(
 			'label' => __( 'Label Font Size', 'login-customizer' ),
 			'section' => 'logincust_field_section',
 			'priority' => 60,

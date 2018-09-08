@@ -4,7 +4,8 @@
  */
 
 $wp_customize->add_section(
-	'logincust_templates', array(
+	'logincust_templates',
+	array(
 		'priority' => 0,
 		'title' => __( 'Templates', 'login-customizer' ),
 		'panel'  => 'logincust_panel',
@@ -12,7 +13,8 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_templates_control]', array(
+	'login_customizer_options[logincust_templates_control]',
+	array(
 		'default' => 'original',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -22,7 +24,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Radio_Images_Control(
-		$wp_customize, 'login_customizer_options[logincust_templates_control]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_templates_control]',
+		array(
 			'label' => __( 'Templates', 'login-customizer' ),
 			'section' => 'logincust_templates',
 			'priority' => 5,

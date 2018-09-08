@@ -24,7 +24,9 @@ if ( ! is_customize_preview() ) {
 <head>
 <?php
 $login_title = sprintf(
-	__( '%1$s &lsaquo; %2$s &#8212; WordPress', 'login-customizer' ), __( 'Log In', 'login-customizer' ), get_bloginfo( 'name', 'display' )
+	__( '%1$s &lsaquo; %2$s &#8212; WordPress', 'login-customizer' ),
+	__( 'Log In', 'login-customizer' ),
+	get_bloginfo( 'name', 'display' )
 );
 ?>
 <title><?php echo esc_attr( $login_title ); ?></title>

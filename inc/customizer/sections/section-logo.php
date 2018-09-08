@@ -4,7 +4,8 @@
  */
 
 $wp_customize->add_section(
-	'logincust_logo_section', array(
+	'logincust_logo_section',
+	array(
 		'priority' => 10,
 		'title' => __( 'Logo', 'login-customizer' ),
 		'panel'  => 'logincust_panel',
@@ -12,7 +13,8 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_logo_show]', array(
+	'login_customizer_options[logincust_logo_show]',
+	array(
 		'default' => false,
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -23,7 +25,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Toggle_Control(
-		$wp_customize, 'login_customizer_options[logincust_logo_show]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_logo_show]',
+		array(
 			'label' => __( 'Disable Logo?', 'login-customizer' ),
 			'section' => 'logincust_logo_section',
 			'priority' => 5,
@@ -33,7 +37,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_logo]', array(
+	'login_customizer_options[logincust_logo]',
+	array(
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw',
@@ -43,7 +48,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Image_Control(
-		$wp_customize, 'login_customizer_options[logincust_logo]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_logo]',
+		array(
 			'label' => __( 'Logo', 'login-customizer' ),
 			'section' => 'logincust_logo_section',
 			'priority' => 10,
@@ -53,7 +60,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_logo_width]', array(
+	'login_customizer_options[logincust_logo_width]',
+	array(
 		'default' => '84px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -64,7 +72,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_logo_width]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_logo_width]',
+		array(
 			'label' => __( 'Logo Width', 'login-customizer' ),
 			'section' => 'logincust_logo_section',
 			'priority' => 15,
@@ -82,7 +92,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_logo_height]', array(
+	'login_customizer_options[logincust_logo_height]',
+	array(
 		'default' => '84px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -93,7 +104,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_logo_height]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_logo_height]',
+		array(
 			'label' => __( 'Logo Height', 'login-customizer' ),
 			'section' => 'logincust_logo_section',
 			'priority' => 20,
@@ -111,7 +124,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_logo_padding]', array(
+	'login_customizer_options[logincust_logo_padding]',
+	array(
 		'default' => '5px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -122,7 +136,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_logo_padding]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_logo_padding]',
+		array(
 			'label' => __( 'Padding Bottom', 'login-customizer' ),
 			'section' => 'logincust_logo_section',
 			'priority' => 25,
@@ -140,7 +156,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_logo_link]', array(
+	'login_customizer_options[logincust_logo_link]',
+	array(
 		'default' => 'https://wordpress.org/',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -149,7 +166,8 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-	'login_customizer_options[logincust_logo_link]', array(
+	'login_customizer_options[logincust_logo_link]',
+	array(
 		'label' => __( 'Logo URL', 'login-customizer' ),
 		'description' => __( 'The page where your logo will take you.', 'login-customizer' ),
 		'section' => 'logincust_logo_section',

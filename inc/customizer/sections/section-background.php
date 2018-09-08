@@ -4,7 +4,8 @@
  */
 
 $wp_customize->add_section(
-	'logincust_background_section', array(
+	'logincust_background_section',
+	array(
 		'priority' => 5,
 		'title' => __( 'Background', 'login-customizer' ),
 		'panel'  => 'logincust_panel',
@@ -12,7 +13,8 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_bg_color]', array(
+	'login_customizer_options[logincust_bg_color]',
+	array(
 		'default' => '#F1F1F1',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -23,7 +25,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_bg_color]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_bg_color]',
+		array(
 			'label' => __( 'Background Color', 'login-customizer' ),
 			'section' => 'logincust_background_section',
 			'priority' => 5,
@@ -33,7 +37,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_bg_image]', array(
+	'login_customizer_options[logincust_bg_image]',
+	array(
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw',
@@ -43,7 +48,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Image_Control(
-		$wp_customize, 'login_customizer_options[logincust_bg_image]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_bg_image]',
+		array(
 			'label' => __( 'Background Image', 'login-customizer' ),
 			'section' => 'logincust_background_section',
 			'priority' => 10,
@@ -53,7 +60,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_bg_image_size]', array(
+	'login_customizer_options[logincust_bg_image_size]',
+	array(
 		'default' => 'auto',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -62,7 +70,8 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'login_customizer_options[logincust_bg_image_size]', array(
+	'login_customizer_options[logincust_bg_image_size]',
+	array(
 		'label' => __( 'Background Size', 'login-customizer' ),
 		'section' => 'logincust_background_section',
 		'type' => 'select',
@@ -78,7 +87,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_bg_size]', array(
+	'login_customizer_options[logincust_bg_size]',
+	array(
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'esc_html',
@@ -87,7 +97,8 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-	'login_customizer_options[logincust_bg_size]', array(
+	'login_customizer_options[logincust_bg_size]',
+	array(
 		'label' => __( 'Custom Size', 'login-customizer' ),
 		'section' => 'logincust_background_section',
 		'priority' => 20,
@@ -96,7 +107,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_bg_image_repeat]', array(
+	'login_customizer_options[logincust_bg_image_repeat]',
+	array(
 		'default' => 'no-repeat',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -105,7 +117,8 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'login_customizer_options[logincust_bg_image_repeat]', array(
+	'login_customizer_options[logincust_bg_image_repeat]',
+	array(
 		'label'   => __( 'Background Repeat', 'login-customizer' ),
 		'section' => 'logincust_background_section',
 		'type'    => 'select',
@@ -121,7 +134,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_bg_image_position_x]', array(
+	'login_customizer_options[logincust_bg_image_position_x]',
+	array(
 		'default' => 'left',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -132,7 +146,8 @@ $wp_customize->add_setting(
 
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_bg_image_position_y]', array(
+	'login_customizer_options[logincust_bg_image_position_y]',
+	array(
 		'default' => 'top',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -143,7 +158,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Background_Position_Control(
-		$wp_customize, 'login_customizer_options[logincust_bg_image_position]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_bg_image_position]',
+		array(
 			'label' => __( 'Background Position', 'login-customizer' ),
 			'section' => 'logincust_background_section',
 			'priority' => 30,

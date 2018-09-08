@@ -48,7 +48,8 @@ class LoginCustomizerTemplate {
 
 			// Add a filter to the wp 4.7 version attributes metabox
 			add_filter(
-				'theme_page_templates', array( $this, 'add_new_template' )
+				'theme_page_templates',
+				array( $this, 'add_new_template' )
 			);
 
 		}
@@ -128,14 +129,18 @@ class LoginCustomizerTemplate {
 		// Return default template if we don't have a custom one defined
 		if ( ! isset(
 			$this->templates[ get_post_meta(
-				$post->ID, '_wp_page_template', true
+				$post->ID,
+				'_wp_page_template',
+				true
 			) ]
 		) ) {
 			return $template;
 		}
 
 		$file = plugin_dir_path( __FILE__ ) . get_post_meta(
-			$post->ID, '_wp_page_template', true
+			$post->ID,
+			'_wp_page_template',
+			true
 		);
 
 		// Just to be safe, we check if the file exist first

@@ -3,17 +3,17 @@
  *  Plugin loader
  *
  * @package LOGINCUST
- * @author Themeisle
+ * @author HardeepAsrani
  * @since 1.0.0
  */
 
 /**
  * Plugin Name: Custom Login Page Customizer
- * Plugin URI: https://themeisle.com/plugins/login-customizer/
+ * Plugin URI: http://wordpress.org/plugins/login-customizer/
  * Description: Custom Login Customizer plugin allows you to easily customize your login page straight from your WordPress Customizer! Awesome, right?
  * Author: Hardeep Asrani
- * Author URI:  https://themeisle.com/
- * Version: 2.0.0
+ * Author URI:  http://www.hardeepasrani.com/
+ * Version: 2.0.1
  * WordPress Available:  yes
  * Requires License:    no
  */
@@ -22,18 +22,9 @@ define( 'LOGINCUST_VERSION', '2.0.0' );
 define( 'LOGINCUST_FREE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LOGINCUST_FREE_URL', plugin_dir_url( __FILE__ ) );
 
-require_once( LOGINCUST_FREE_PATH . 'vendor/autoload.php' );
 require_once( LOGINCUST_FREE_PATH . 'setup.php' );
 require_once( LOGINCUST_FREE_PATH . 'inc/include-page-template.php' );
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/customizer.php' );
-
-function login_customizer_register_sdk( $products ) {
-	$products[] = __FILE__;
-
-	return $products;
-}
-
-add_filter( 'themeisle_sdk_products', 'login_customizer_register_sdk', 10, 1 );
 
 /**
  * Add link to Login Customizer in Appearances menu

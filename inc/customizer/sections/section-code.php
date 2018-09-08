@@ -4,7 +4,8 @@
  */
 
 $wp_customize->add_section(
-	'logincust_code_section', array(
+	'logincust_code_section',
+	array(
 		'priority' => 40,
 		'title' => __( 'Custom CSS & JavaScript', 'login-customizer' ),
 		'panel'  => 'logincust_panel',
@@ -12,7 +13,8 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_other_css]', array(
+	'login_customizer_options[logincust_other_css]',
+	array(
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 	)
@@ -20,7 +22,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Code_Editor_Control(
-		$wp_customize, 'login_customizer_options[logincust_other_css]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_other_css]',
+		array(
 			'label' => __( 'Custom CSS', 'login-customizer' ),
 			'code_type' => 'text/css',
 			'section' => 'logincust_code_section',
@@ -31,7 +35,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_other_js]', array(
+	'login_customizer_options[logincust_other_js]',
+	array(
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 	)
@@ -39,7 +44,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Code_Editor_Control(
-		$wp_customize, 'login_customizer_options[logincust_other_js]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_other_js]',
+		array(
 			'label' => __( 'Custom JavaScript', 'login-customizer' ),
 			'code_type' => 'text/javascript',
 			'section' => 'logincust_code_section',

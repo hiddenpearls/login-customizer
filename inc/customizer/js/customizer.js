@@ -2,7 +2,7 @@
 
 jQuery( document ).ready( function( $ ) {
 
-	$( '<li class="accordion-section control-section control-section-default control-subsection"><h4 class="accordion-section-title"><a href="https://wordpress.org/support/plugin/login-customizer/reviews/#new-post" target="_blank">Like our plugin? Leave a review here!</a></h4></li><li style="padding: 10px; text-align: center;">Made with ❤ by <a href="https://themeisle.com/" target="_blank">ThemeIsle</a></li>' ).appendTo( '#sub-accordion-panel-logincust_panel' );
+	$( '<li class="accordion-section control-section control-section-default control-subsection"><h4 class="accordion-section-title"><a href="https://wordpress.org/support/plugin/login-customizer/reviews/#new-post" target="_blank">Like our plugin? Leave a review here!</a></h4></li><li style="padding: 10px; text-align: center;">Made with ❤ by <a href="http://www.hardeepasrani.com/" target="_blank">Hardeep Asrani</a></li>' ).appendTo( '#sub-accordion-panel-logincust_panel' );
 
 	if ( wp.customize( 'login_customizer_options[logincust_bg_image]' )._value === '' ) {
 		$( '#customize-control-login_customizer_options-logincust_bg_image_size' ).hide();

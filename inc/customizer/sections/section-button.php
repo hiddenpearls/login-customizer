@@ -4,7 +4,8 @@
  */
 
 $wp_customize->add_section(
-	'logincust_button_section', array(
+	'logincust_button_section',
+	array(
 		'priority' => 30,
 		'title' => __( 'Button', 'login-customizer' ),
 		'panel'  => 'logincust_panel',
@@ -12,7 +13,8 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_bg]', array(
+	'login_customizer_options[logincust_button_bg]',
+	array(
 		'default' => '#2EA2CC',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -23,7 +25,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_bg]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_bg]',
+		array(
 			'label' => __( 'Background', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 5,
@@ -33,7 +37,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_hover_bg]', array(
+	'login_customizer_options[logincust_button_hover_bg]',
+	array(
 		'default' => '#1E8CBE',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -44,7 +49,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_hover_bg]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_hover_bg]',
+		array(
 			'label' => __( 'Background (Hover)', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 10,
@@ -54,7 +61,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_height_width]', array(
+	'login_customizer_options[logincust_button_height_width]',
+	array(
 		'default' => 'auto',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -63,7 +71,8 @@ $wp_customize->add_setting(
 	)
 );
 $wp_customize->add_control(
-	'login_customizer_options[logincust_button_height_width]', array(
+	'login_customizer_options[logincust_button_height_width]',
+	array(
 		'label' => __( 'Button Size', 'login-customizer' ),
 		'section' => 'logincust_button_section',
 		'type' => 'select',
@@ -77,7 +86,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_width_size]', array(
+	'login_customizer_options[logincust_button_width_size]',
+	array(
 		'default' => '63px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -88,7 +98,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_width_size]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_width_size]',
+		array(
 			'label' => __( 'Width', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 20,
@@ -106,7 +118,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_height_size]', array(
+	'login_customizer_options[logincust_button_height_size]',
+	array(
 		'default' => '32px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -117,7 +130,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_height_size]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_height_size]',
+		array(
 			'label' => __( 'Height', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 25,
@@ -135,7 +150,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_font_size]', array(
+	'login_customizer_options[logincust_button_font_size]',
+	array(
 		'default' => '13px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -146,7 +162,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_font_size]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_font_size]',
+		array(
 			'label' => __( 'Font Size', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 30,
@@ -164,7 +182,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_color]', array(
+	'login_customizer_options[logincust_button_color]',
+	array(
 		'default' => '#FFF',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -175,7 +194,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_color]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_color]',
+		array(
 			'label' => __( 'Text Color', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 35,
@@ -185,7 +206,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_padding]', array(
+	'login_customizer_options[logincust_button_padding]',
+	array(
 		'default' => '0 12px 2px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -196,7 +218,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new LoginCust_Padding_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_padding]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_padding]',
+		array(
 			'label' => __( 'Padding', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 40,
@@ -206,7 +230,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_border_width]', array(
+	'login_customizer_options[logincust_button_border_width]',
+	array(
 		'default' => '1px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -217,7 +242,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_border_width]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_border_width]',
+		array(
 			'label' => __( 'Border Width', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 45,
@@ -235,7 +262,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_border]', array(
+	'login_customizer_options[logincust_button_border]',
+	array(
 		'default' => '#0074A2',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -246,7 +274,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_border]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_border]',
+		array(
 			'label' => __( 'Border', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 55,
@@ -256,7 +286,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_hover_border]', array(
+	'login_customizer_options[logincust_button_hover_border]',
+	array(
 		'default' => '#0074A2',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -267,7 +298,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_hover_border]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_hover_border]',
+		array(
 			'label' => __( 'Border (Hover)', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 60,
@@ -277,7 +310,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_shadow_spread]', array(
+	'login_customizer_options[logincust_button_shadow_spread]',
+	array(
 		'default' => '0px',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -288,7 +322,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new O2_Customizer_Range_Slider_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_shadow_spread]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_shadow_spread]',
+		array(
 			'label' => __( 'Shadow Spread', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 65,
@@ -306,7 +342,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_shadow]', array(
+	'login_customizer_options[logincust_button_shadow]',
+	array(
 		'default' => '#78C8E6',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -317,7 +354,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new LoginCust_Customize_Alpha_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_shadow]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_shadow]',
+		array(
 			'label' => __( 'Box Shadow', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 70,
@@ -327,7 +366,8 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting(
-	'login_customizer_options[logincust_button_text_shadow]', array(
+	'login_customizer_options[logincust_button_text_shadow]',
+	array(
 		'default' => '#006799',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
@@ -338,7 +378,9 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	new WP_Customize_Color_Control(
-		$wp_customize, 'login_customizer_options[logincust_button_text_shadow]', array(
+		$wp_customize,
+		'login_customizer_options[logincust_button_text_shadow]',
+		array(
 			'label' => __( 'Text Shadow', 'login-customizer' ),
 			'section' => 'logincust_button_section',
 			'priority' => 75,

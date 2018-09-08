@@ -19,12 +19,6 @@ require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sanitizers.php' );
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/custom-code.php' );
 // Functions to change login page
 require_once( LOGINCUST_FREE_PATH . 'inc/customizer/functions.php' );
-// Sendinblue Class
-if ( ! class_exists( 'Mailin' ) ) {
-	require_once( LOGINCUST_FREE_PATH . 'inc/mailin.php' );
-}
-// Cool Stuff Control
-require_once( LOGINCUST_FREE_PATH . 'inc/customizer/controls/cool-stuff/cool-stuff-control.php' );
 
 /**
  * Register login customizer settings
@@ -33,11 +27,12 @@ function logincust_customize_register( $wp_customize ) {
 
 	// Login Customizer Panel
 	$wp_customize->add_panel(
-		'logincust_panel', array(
+		'logincust_panel',
+		array(
 			'priority'       => 30,
 			'capability'     => 'edit_theme_options',
 			'title'          => __( 'Login Customizer', 'login-customizer' ),
-			'description'    => __( 'This section allows you to customize the login page of your website. Made with ❤ by <a target="_blank" rel="nofollow" href="https://themeisle.com">ThemeIsle</a> team.', 'login-customizer' ),
+			'description'    => __( 'This section allows you to customize the login page of your website. Made with ❤ by <a target="_blank" rel="nofollow" href="http://www.hardeepasrani.com">HardeepAsrani</a> team.', 'login-customizer' ),
 		)
 	);
 
@@ -64,9 +59,6 @@ function logincust_customize_register( $wp_customize ) {
 
 	// Section #8: Custom CSS & JS
 	require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sections/section-code.php' );
-
-	// Section #9: More Cool Stuff
-	require_once( LOGINCUST_FREE_PATH . 'inc/customizer/sections/section-more.php' );
 
 }
 add_action( 'customize_register', 'logincust_customize_register' );
