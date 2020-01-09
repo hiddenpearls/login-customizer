@@ -53,7 +53,7 @@ if ( is_multisite() ) {
 
 	$login_header_url = apply_filters( 'login_headerurl', $login_header_url );
 
-	$login_header_title = apply_filters( 'login_headertitle', $login_header_title );
+	$login_header_title = apply_filters( 'login_headertext', $login_header_title );
 
 if ( is_multisite() ) {
 	$login_header_text = get_bloginfo( 'name', 'display' );
