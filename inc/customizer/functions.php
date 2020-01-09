@@ -31,8 +31,8 @@ function logincust_login_logo_url_title() {
 	return $title;
 }
 
-// Hook to login_headertitle
-add_filter( 'login_headertitle', 'logincust_login_logo_url_title' );
+// Hook to login_headertext
+add_filter( 'login_headertext', 'logincust_login_logo_url_title' );
 
 /**
  * Remove register link
